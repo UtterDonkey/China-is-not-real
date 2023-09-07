@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nft of clash</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="Nft.css">
+</head>
+
+<body>
+    <object id="nav-object" data="nav.html"></object>
+    <audio src="hog-rider-scream.mp3">Click Me</audio>
+    <script>
+        const audio = document.querySelector('audio');
+        document.onclick = () =>{ // browsers won't play audio until user interacts with page
+            audio.play();
+            audio.onended = () =>{
+                audio.play();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+* {
+    color-scheme: dark;
+    margin: 0;
+}
+
+html,
+body {
+    font-family: sans-serif;
+    padding: 0;
+}
+
+a {
+    filter: saturate(50);
+}
+
+details {
+    background-color: rgb(77, 77, 77);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+summary {
+    cursor: pointer;
+}
+
+summary:hover {
+    filter: brightness(0.8);
+}
+
+summary:active {
+    filter: brightness(0.6);
+}
+
+sup>a {
+    text-decoration: none;
+    filter: none;
+    color: blue;
+    font-size: x-large;
+    position: relative;
+    top: 0.33em;
+}
+
+object#nav-object {
+    height: 48px;
+    width: 100vw;
+    position: fixed;
+    inset: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+div#nav {
+    width: 100vw;
+    display: flex;
+    gap: 1rem;
+    height: 48px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999999;
+}
+
+div.nav-button {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+div.nav-button:hover {
+    background-color: #0004;
+}
+
+div.nav-button:active {
+    background-color: #0008;
+}
+
+div#header-container {
+    margin-top: 48px;
+    background: url('map.jpg');
+    position: relative;
+    width: calc(100vw - 2rem);
+    left: 1rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+div#content {
+    position: relative;
+    width: calc(100vw - 4rem);
+    left: 1rem;
+    background-color: grey;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+}
+
+img {
+    border-radius: 1rem;
+}

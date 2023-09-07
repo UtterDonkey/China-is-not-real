@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Component</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <div id="nav">
+        <div class="nav-button" onclick="parent.location.href = './'">Home</div>
+        <div class="nav-button"  onclick="parent.location.href = './team.html'">Our Team</div>
+        <div class="nav-button"  onclick="parent.location.href = './immerse'">Immersive Experience</div>
+        <div class="nav-button"  onclick="parent.location.href = './Nft.html'">NFT</div>
+    </div>
+    <script>
+        const audio = new Audio('ambient.mp3')
+        function play(){
+            audio.play();
+            audio.onended = () =>{
+                play();
+            }
+            audio.onerror = () =>{
+                setTimeout(play, 2000);
+            }
+        }
+        play();
+    </script>
+</body>
+</html>

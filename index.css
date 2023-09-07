@@ -1,0 +1,32 @@
+
+h1#main {
+    text-align: center;
+    background: url('flag.png');
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: max(2.5vw, 5vh);
+    font-weight: 900;
+    background-size: 7%;
+    background-repeat: repeat;
+    background-position-y: -50%;
+}
+
+
+
+div#switch-1 {
+    background: url('china 1.jpeg');
+    height: min(50vh, 500px);
+    width: min(80vw, 800px);
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    transition: background 0.5s ease-in;
+}
+
+div#switch-1:hover{
+    background: url('china 2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+

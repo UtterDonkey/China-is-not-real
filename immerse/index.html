@@ -1,0 +1,2392 @@
+<!DOCTYPE html>
+<head>
+  <base href="assets/">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    html {
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+
+    body {
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      margin: 0;
+      scrollbar-width: 0px;
+      height: 100vh;
+      width: 100vw;
+      touch-action: manipulation;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    div#plane {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    div#camera {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform-style: preserve-3d;
+    }
+
+    div#camera-viewpoint {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform-style: preserve-3d;
+    }
+  </style>
+</head>
+
+<body style="overflow: hidden !important; margin: 0;">
+  <pillor style="left: 50%;translate: -50%;position: absolute;width:100vw">
+    <div id="canvas" style="overflow: clip;height: 100%;width: 100%;position: relative;">
+      <div id="plane">
+        <div id="camera-viewpoint">
+          <div id="camera"></div>
+        </div>
+      </div>
+    </div>
+  </pillor>
+  <script>
+    class Britain{constructor(){this.compileCSS=this.convertCSS}convertCSS(a){return a.replaceAll("colour","color").replaceAll("behaviour","behavior").replaceAll("centre","center")}}(()=>{async function a(a,f){for(let c of Array.from(f||document.querySelectorAll("*")).filter(a=>a.style&&!b.includes(a))){for(let a in d)c.style.__defineGetter__(d[a],()=>c.style.getPropertyValue(a)),c.style.__defineSetter__(d[a],b=>{c.style[a]=b});for(let a of e)c.style.__defineGetter__(a,()=>c.style.getPropertyValue(a).replace("center","centre")),c.style.__defineSetter__(a,b=>{c.style[a]=b.replace("centre","center")});b.push(c)}if(a){for(let a of Array.from(document.styleSheets).filter(a=>a.ownerNode&&a.ownerNode.href&&a.ownerNode.crumpet!==void 0&&!c.includes(a.ownerNode.href))){if(null==a.ownerNode)return;const b=document.createElement("style");b.innerHTML=new Britain().compileCSS(await(await fetch(a.ownerNode.href)).text()),a.ownerNode.insertAdjacentElement("afterEnd",b),c.push(a.ownerNode.href),c.push(b)}for(let a of Array.from(document.querySelectorAll("style[crumpet]")).filter(a=>!c.includes(a)))a.innerHTML=new Britain().compileCSS(a.innerHTML),c.push(a)}}const b=[],c=[],d={accentColor:"accentColour",backgroundColor:"backgroundColour",borderBlockColor:"borderBlockColour",borderBlockEndColor:"borderBlockEndColour",borderBlockStartColor:"borderBlockStartColour",borderBottomColor:"borderBottomColour",borderColor:"borderColour",borderInlineColor:"borderInlineColour",borderInlineEndColor:"borderInlineEndColour",borderInlineStartColor:"borderInlineStartColour",borderLeftColor:"borderLeftColour",borderRightColor:"borderRightColour",borderTopColor:"borderTopColour",caretColor:"caretColour",color:"colour",colorInterpolation:"colourInterpolation",colorInterpolationFilters:"colourInterpolationFilters",colorRendering:"colourRendering",colorScheme:"colourScheme",columnRuleColor:"columnRuleColour",floodColor:"floodColour",forcedColorAdjust:"forcedColourAdjust",lightingColor:"lightingColour",outlineColor:"outlineColour",overrideColors:"overrideColours",overscrollBehavior:"overscrollBehaviour",overscrollBehaviorBlock:"overscrollBehaviourBlock",overscrollBehaviorInline:"overscrollBehaviourInline",overscrollBehaviorX:"overscrollBehaviourX",overscrollBehaviorY:"overscrollBehaviourY",scrollBehavior:"scrollBehaviour",stopColor:"stopColour",textDecorationColor:"textDecorationColour",textEmphasisColor:"textEmphasisColour",webkitBorderAfterColor:"webkitBorderAfterColour",webkitBorderBeforeColor:"webkitBorderBeforeColour",webkitBorderEndColor:"webkitBorderEndColour",webkitBorderStartColor:"webkitBorderStartColour",webkitColumnRuleColor:"webkitColumnRuleColour",webkitPrintColorAdjust:"webkitPrintColourAdjust",webkitTapHighlightColor:"webkitTapHighlightColour",webkitTextEmphasisColor:"webkitTextEmphasisColour",webkitTextFillColor:"webkitTextFillColour",webkitTextStrokeColor:"webkitTextStrokeColour"},e=["textAlign","alignContent","alignItems","alignSelf","backgroundPosition","justifyContent","verticalAlign"];setInterval(a,5e3,!0);const f=setInterval(a,0,!0);a(!0),window.addEventListener("load",()=>{clearInterval(f),a(!0)});const g=new MutationObserver(function(b){for(let c of b)a(!1,[c.target,...c.addedNodes])});g.observe(document,{subtree:!0,childList:!0}),["Math","MathMLElement","CSSMathInvert","CSSMathMax","CSSMathMin","CSSMathNegate","CSSMathProduct","CSSMathSum"].map(a=>{window.__defineGetter__(a.replace("Math","Maths"),()=>window[a])}),window.document.__defineGetter__("biscuit",()=>window.document.cookie),window.document.__defineSetter__("biscuit",a=>{window.document.cookie=a}),window.Math.__defineGetter__("PISS",()=>Maths.PI+(Maths.random()-.5)*Maths.random()*Maths.random()*Maths.random()),window.Math.__defineGetter__("gibberish",()=>Maths.random()),window.Math.__defineGetter__("numerate",()=>function(a){return isNaN(a)||null===a||void 0===a?0:a}),window.console.__defineGetter__("print",()=>console.log),window.__defineGetter__("gibberish",()=>{const a=9*(8*(7*(6*(5*(4*(3*(2*Maths.gibberish*Maths.gibberish)*Maths.gibberish)*Maths.gibberish)*Maths.gibberish)*Maths.gibberish)*Maths.gibberish)*Maths.gibberish)*Maths.gibberish;return[...Array(Maths.ceil(a)).keys()].map(()=>"abcdefghilkjmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890aeiouaeiouAEIOUAEIOU"[Maths.floor(82*Maths.gibberish)]).join("")}),window.__defineGetter__("Pledge",()=>window.Promise),window.__defineGetter__("Sanitiser",()=>window.Sanitizer),window.__defineGetter__("XMLSerialiser",()=>window.XMLSerializer),window.__defineGetter__("FinalisationRegistry",()=>window.FinalizationRegistry),window.__defineGetter__("BigBen",()=>{const a=new BigBenInternational,b=new Intl.DateTimeFormat([],{timeZone:"Europe/London",hour:"numeric",minute:"numeric",second:"numeric",hourCycle:"h23"}),c=b.format(a),[d,e,f]=c.split(":"),g=new BigBenInternational(a.getUTCFullYear(),a.getUTCMonth(),a.getUTCDate(),d,e,f);return g}),window.__defineGetter__("BigBenInternational",()=>window.Date),window.__defineGetter__("afterTeaHasBrewed",()=>(a,...b)=>new Promise(c=>{setTimeout(async()=>{c(a(...b))},18e4)})),window.__defineGetter__("inAJiffy",()=>setImmediate),window.setImmediate||function(){'use strict';function a(a){const b=a[0];switch(a.length){case 1:return b();case 2:return b(a[1]);case 3:return b(a[1],a[2]);}return b.apply(window,f.call(a,1))}function b(b){const c=b.data;let e;"string"==typeof c&&0==c.indexOf(g)&&(e=d[c],e&&(delete d[c],a(e)))}let c=0;const d={};let e=!0;const f=Array.prototype.slice,g="setImmediatePolyfillMessage";window.setImmediate=function(){const a=c++,f=g+a;let h=arguments.length;const j=Array(h);for(;h--;)j[h]=arguments[h];return d[f]=j,e&&(e=!1,window.addEventListener("message",b)),window.postMessage(f,"*"),a},window.clearImmediate=function(a){delete d[g+a]}}()})();
+    // engine start
+    const noPillor = true;
+    const globalValues = {};
+const globalFunctions = {};
+const project = {
+    sprites: [],
+    spriteMap: {},
+    render: [],
+    assets: [],
+    assetMap: {},
+    variables: [],
+    resourceState: 'full',
+    queue: {
+        cycle: [],
+        frame: []
+    },
+    cache: {
+        imageCache: Date.now()
+    },
+    options: {
+        stageSize: {
+            width: 1600,
+            height: 900,
+            maintainAspectRatio: true
+        },
+        runtime: {
+            FPS: 60,
+            CPS: 100,
+            fpsDrop: 30,
+            animate: true,
+            clock: false,
+            supportAnimate: false,
+            cacheAssets: false,
+            executionTime: 5000
+        }
+    },
+    events: [],
+    running: true,
+    terminated: false,
+    stop: () => {
+        for (let e of project.events) {
+            e.terminate();
+        }
+        for (let i = 0; i < project.sprites.length; i++) {
+            if (Object.keys(project.sprites[i]).length == 0) continue;
+            for (let s of project.sprites[i].sounds) {
+                if (!s.ended) s.stop();
+            }
+
+            if (project.sprites[i].terminate && !project.sprites[i].isDefault) project.sprites[i].terminate(!1);
+        };
+
+        project.running = false;
+        project.terminated = true;
+    },
+    start: (importFile, setupOnly) => {
+        return new Promise(async resolve => {
+            if (importFile) {
+                project.options = importFile.options;
+                project.compiler = importFile.compiler;
+                project.exportSettings = importFile.exportSettings || [];
+                project.assets = importFile.assets || [];
+                project.assetMap = importFile.assetMap || [];
+                project.spriteMap = importFile.spriteMap || [];
+                if (importFile.sprites.find(e => e.global)) {
+                    const spriteImport = createSprite(null, importFile.sprites.find(e => e.global).name, true, false, importFile.sprites.find(e => e.global).defaults || false, true, false, null, importFile.sprites.find(e => e.global).internalID);
+                    getSprite(spriteImport).scripts = importFile.sprites.find(e => e.global).scripts;
+                }
+
+                const componentMap = {};
+                let components = importFile.sprites.filter(e => e.component).map(e => (e.mapped = false, e));
+                while (components.find(e => !e.mapped)) {
+                    components.forEach((comp, i) => {
+                        if (comp.mapped) return;
+                        const compParent = comp.parentComponent || null;
+                        if (compParent === null) {
+                            componentMap[comp.internalID] = {};
+                            components[i].mapped = true;
+                            components[i].map = componentMap[comp.internalID];
+                        } else if (components.filter(e => e.mapped).map(e => e.internalID).includes(compParent)) {
+                            const idx = components.map(e => e.internalID).indexOf(compParent);
+                            components[idx].map[comp.internalID] = {}
+
+                            components[i].mapped = true;
+                            components[i].map = components[idx].map[comp.internalID];
+                        }
+                    });
+                }
+
+                function createComponent(map, name, defaults, parent, internalID, scripts) {
+                    const spriteImport = createSprite(null, name, true, false, defaults || false, false, true, parent || null, internalID);
+                    getSprite(spriteImport).scripts = scripts;
+                    for (let i of Object.keys(map)) {
+                        const component = importFile.sprites.find(e => e.internalID == i);
+                        createComponent(map[i], component.name, component.defaults, component.parentComponent, component.internalID, component.scripts);
+                    }
+                }
+                for (let i of Object.keys(componentMap)) {
+                    const component = importFile.sprites.find(e => e.internalID == i);
+                    createComponent(componentMap[i], component.name, component.defaults, component.parentComponent, component.internalID, component.scripts);
+                }
+                for (let i of importFile.sprites.filter(e => !e.component && !e.global)) {
+                    const spriteImport = createSprite(i.costume, i.name, true, false, i.defaults || false, false, false, i.parentComponent || null, i.internalID);
+                    getSprite(spriteImport).scripts = i.scripts;
+                    if(!importFile.sprites.map(e =>e.internalID).concat([null]).includes(i.parentComponent)) getSprite(spriteImport).terminate(true);
+                }
+                // for (let i of importFile.sprites.filter(e => !e.global)) {
+                //     if (i.parentComponent) getSprite(i.name).parentComponent = getSprite(importFile.sprites.find(e =>e.internalID == i.parentComponent).id).internalID;
+                // }
+            }
+            if (!setupOnly) {
+                project.idle = false;
+                const sprites = [...project.sprites];
+                await (async () => {
+                    for (let i of sprites) {
+
+                        if (Object.keys(i).length > 0) {
+                            const scripts = i.scripts;
+                            for (let j = 0; j < scripts.length; j++) {
+                                if (!scripts[j]) continue;
+                                if (scripts[j].event == 'start') {
+                                    try {
+                                        abandonShip(i);
+                                        (new Function(`const spriteData = getSprite(${i.id});(${functionEval.replace('// END', `${scripts[j].default == 'javascript' ? '(async () =>{const scriptFunction = await' : ''}(async () =>{${scripts[j].default == 'javascript' ? scripts[j].JScode : (scripts[j].compiled || scripts[j].code)}})();${scripts[j].default == 'javascript' ? 'if(!project.queue) project.queue = {cycle: [],frame: []}; if(scriptFunction.cycleTick) project.queue.cycle.push({sprite: spriteData, script: scriptFunction.cycleTick}); if(scriptFunction.frameTick) project.queue.frame.push({sprite: spriteData, script: scriptFunction.frameTick}); if(scriptFunction.onClone && spriteData.ref) spriteData.ref.addEventListener("clone", async (eventData) =>{eventData.detail.spriteData.run(scriptFunction.onClone)}); if(scriptFunction.init) (async () =>{scriptFunction.init()})();})()' : ''}`)})();`))();
+                                        abandonShip(i);
+                                    } catch (e) {
+                                        project.console.push({ text: e.toString(), sprite: i.name, err: e, type: 'error', script: scripts[j].name });
+                                    }
+
+                                }
+                            }
+                        };
+
+
+                    };
+                })();
+            }
+            resolve();
+        });;
+    },
+    checkScripts: () => {
+        const sprites = [...project.sprites];
+        for (let i of sprites) {
+            (async () => {
+                if (Object.keys(i).length > 0) {
+                    const scripts = i.scripts;
+                    for (let j = 0; j < scripts.length; j++) {
+                        if (!scripts[j]) continue;
+                        const vm = require('vm');
+                        const code = `const spriteData = getSprite(${i.id});(${functionEval.replace('// END', `${scripts[j].default == 'javascript' ? '(async () =>{const scriptFunction = await' : ''}(async () =>{${scripts[j].default == 'javascript' ? scripts[j].JScode : (scripts[j].compiled || scripts[j].code)}})();${scripts[j].default == 'javascript' ? 'if(scriptFunction.init) (async () =>{scriptFunction.init()})(); if(scriptFunction.frameTick) (async () =>{scriptFunction.frameTick()})(); if(scriptFunction.cycleTick) (async () =>{scriptFunction.cycleTick()})();})()' : ''}`)})();`
+                        const sandbox = {}
+                        Object.keys(window).forEach(e => {
+                            sandbox[e] = window[e]
+                        })
+                        try {
+                            vm.runInNewContext(code, sandbox, { timeout: 2000 });
+                        } catch (err) {
+                            if (err.code == 'ERR_SCRIPT_EXECUTION_TIMEOUT') top.console.error(`Found Infinite Loop`)
+                        }
+
+
+
+                    }
+
+                };
+            })()
+
+        };
+        console.log('No Infinite Loops Were Found')
+    },
+    console: [],
+    idle: true
+};
+if (typeof noPillor === 'undefined') {
+    window.__defineGetter__('project', () => {
+        return project;
+    })
+    window.__defineSetter__('project', (value) => {
+        return project = value;
+    })
+    window.__defineGetter__('globalValues', () => {
+        return globalValues;
+    })
+    window.__defineSetter__('globalValues', (value) => {
+        return globalValues = value;
+    })
+    window.__defineGetter__('getSprite', () => {
+        return getSprite;
+    })
+    window.__defineGetter__('createSprite', () => {
+        return createSprite;
+    })
+    window.__defineGetter__('globalFunctions', () => {
+        return globalFunctions;
+    })
+}
+function protectParent() {
+    const trueParent = parent;
+    const parentClone = { engineLoaded: parent.engineLoaded, getSelectedSprite: () => { return trueParent.selectedSprite } };
+    window.__defineGetter__('parent', () => {
+        return parentClone;
+    })
+}
+if (parent && !!parent.protect) {
+    protectParent();
+} else {
+    parent.getSelectedSprite = () => { return -1 };
+}
+animate = false;
+loopRuntime = { animate: {} };
+animating = false;
+globalValues.cycles = [];
+globalValues.FPS = 60;
+globalValues.CPS = 100;
+globalValues.zoom = 100;
+globalValues.fpsDrop = 30;
+globalValues.mouseDown = false;
+globalValues.touches = [];
+globalValues.fixedWidth = null;
+globalValues.fixedHeight = null;
+globalValues.keysDown = [];
+globalValues.keyData = {};
+globalValues.touchTimeout = 0;
+globalValues.tick = new Date();
+
+setInterval(() => {
+    const p = performance.now();
+    if (globalValues.abandonShip - p > Maths.max(10000, project.options.runtime.executionTime)) abandonShip();
+    globalValues.abandonShip = p;
+}, 0);
+globalFunctions.getFixedValue = function (dimension, forceUpdate) {
+    if (forceUpdate) {
+        project.cache.stageLeft = globalFunctions.stage().getBoundingClientRect().left;
+        project.cache.stageTop = globalFunctions.stage().getBoundingClientRect().top;
+        project.cache.stageWidth = globalFunctions.stage().clientWidth;
+        project.cache.stageHeight = globalFunctions.stage().clientHeight;
+    }
+    if (globalValues.fixedWidth == null) {
+        return 1;
+    } else {
+        if (forceUpdate || !project.cache.fixed) project.cache.fixed = ((project.cache.stageHeight / globalValues.fixedHeight + project.cache.stageWidth / globalValues.fixedWidth) / 2) * globalValues.zoom / 100;
+        return project.cache.fixed;
+    }
+}
+
+function pause(seconds) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, seconds * 1000);
+    });
+};
+
+
+globalFunctions.getAsset = (asset) => {
+    if (!project.cache) project.cache = { imageCache: Date.now() };
+    if (!project.cache.imageCache) project.cache.imageCache = Date.now();
+    if (project.assetMap && asset in project.assetMap) asset = project.assetMap[asset];
+    if (globalValues.assetStore) {
+
+        if (asset in globalValues.assetStore) return globalValues.assetStore[asset] + '#' + project.cache.imageCache;
+        try {
+            new URL(asset);
+            return asset;
+        } catch (e) {
+            return asset;
+        }
+
+    } else {
+        return asset + '#' + project.cache.imageCache;
+    }
+}
+
+globalFunctions.are_sprites_touching = function (sprite1, sprite2) {
+    const sprite1Radius = ((parseFloat(getComputedStyle(sprite1.ref).height) * (sprite1.height / 100) + parseFloat(getComputedStyle(sprite1.ref).width) * (sprite1.width / 100)) / 2) * (sprite1.size / 100);
+    const sprite2Radius = ((parseFloat(getComputedStyle(sprite2.ref).height) * (sprite2.height / 100) + parseFloat(getComputedStyle(sprite2.ref).width) * (sprite2.width / 100)) / 2) * (sprite2.size / 100);
+    const totalRadius = sprite1Radius / 2 + sprite2Radius / 2;
+    const distanceBetweenSprites = Maths.sqrt((sprite2.ref.x - sprite1.ref.x) ** 2 + (sprite2.ref.y - sprite1.ref.y) ** 2);
+    return isTouching;
+}
+
+globalFunctions.is_sprite_on_stage = function (sprite) {
+    if (!sprite.ref) return false;
+    const xAbs = project.options.stageSize.width / 2 + (parseFloat(getComputedStyle(sprite.ref).width) * (sprite.width / 100) * (sprite.size / 100)) / 2;
+    const yAbs = project.options.stageSize.height / 2 + (parseFloat(getComputedStyle(sprite.ref).height) * (sprite.height / 100) * (sprite.size / 100)) / 2;
+    return (Maths.abs(sprite.x) < xAbs && Maths.abs(sprite.y) < yAbs);
+}
+
+globalFunctions.stage = () => {
+    if (project.cache && project.cache.body) {
+        return project.cache.body;
+    } else {
+        project.cache.body = document.body;
+        return project.cache.body;
+    }
+    return document.body;
+    return document.querySelector('pillor') ? document.querySelector('pillor').querySelector('div') : document.body;
+}
+globalFunctions.execEvent = (ID, eventData) => {
+    const event = getEvent(ID);
+    if (event.active) {
+        if (event.functions.length > 0) {
+            for (let fn of event.functions) (async () => { getSprite(eventData?.detail?.spriteData?.id || fn.sprite).run(fn.fn, typeof eventData == 'undefined' ? undefined : eventData) })();
+        }
+        return getSprite(eventData?.detail?.spriteData?.id || event.sprite).run(event.function, eventData);
+    }
+}
+window.addEventListener('load', function () {
+    this.window.addEventListener('resize', () => {
+        globalFunctions.getFixedValue('any', true);
+    });
+    globalFunctions.getFixedValue('any', true);
+    globalFunctions.stage().addEventListener('mousemove', function (e) {
+        let x = ((((e.clientX - project.cache.stageLeft) / project.cache.stageWidth) - 0.5) * project.options.stageSize.width);
+        let y = (((project.cache.stageTop - e.clientY / project.cache.stageHeight) + 0.5) * project.options.stageSize.height);
+        globalValues.mouseX = x;
+        globalValues.mouseY = y;
+        if (project.engine?.drag) {
+            const sprite = getSprite(parent.getSelectedSprite());
+            const offset = sprite.global ? 1 : ((Maths.abs(globalValues.camera.z - Maths.numerate(sprite.z))) / (globalValues.camera.FOV * globalFunctions.getFixedValue('depth')) + 1);
+
+
+            if (sprite.dragData.dragging) {
+                (sprite.global ? globalValues.camera : sprite)[project.engine.drag[0]] = (globalValues.mouseX - sprite.dragData.mouseX) * offset + sprite.dragData.mouseX + sprite.dragData['drag' + (project.engine.drag[0] == 'x' ? 'X' : 'ZX')];
+                (sprite.global ? globalValues.camera : sprite)[project.engine.drag[1]] = (globalValues.mouseY - sprite.dragData.mouseY) * offset + sprite.dragData.mouseY + sprite.dragData['drag' + (project.engine.drag[1] == 'y' ? 'Y' : 'ZY')];
+                if (!sprite.global) globalFunctions.updatePosition(sprite);
+                if (project.engine?.dragDefault) {
+                    if (project.engine.drag.includes('x')) sprite.defaults.x = sprite.x;
+                    if (project.engine.drag.includes('y')) sprite.defaults.y = sprite.y;
+                    if (project.engine.drag.includes('z')) sprite.defaults.z = sprite.z;
+                }
+            }
+
+        }
+
+    });
+    globalFunctions.stage().addEventListener('mousedown', () => {
+        globalValues.mouseDown = true;
+        if (project.engine?.drag && getSprite(parent.getSelectedSprite()).global) {
+            const sprite = getSprite(parent.getSelectedSprite());
+            sprite.dragData.dragging = true;
+            sprite.dragData.dragX = globalValues.camera.x - globalValues.mouseX;
+            sprite.dragData.dragY = globalValues.camera.y - globalValues.mouseY;
+            sprite.dragData.dragZX = globalValues.camera.z - globalValues.mouseX;
+            sprite.dragData.dragZY = globalValues.camera.z - globalValues.mouseY;
+            sprite.dragData.mouseX = globalValues.mouseX;
+            sprite.dragData.mouseY = globalValues.mouseY;
+        }
+    });
+    globalFunctions.stage().addEventListener('mouseup', () => {
+        globalValues.mouseDown = false;
+        if (project.engine?.drag && getSprite(parent.getSelectedSprite()).global) {
+            const sprite = getSprite(parent.getSelectedSprite());
+            sprite.dragData.dragging = false;
+            sprite.dragData.dragX = null;
+            sprite.dragData.dragY = null;
+        }
+    });
+    globalFunctions.stage().addEventListener('touchstart', function (e) {
+        clearTimeout(globalValues.touchTimeout);
+        for (let i = 0; i < e.touches.length; i++) {
+            if (globalValues.touches.filter(e => e.active).map(e => e.identifier).includes(e.touches[i].identifier)) continue;
+            const x = (e.touches[i].clientX - (globalFunctions.stage().clientWidth / 2));
+            const y = ((globalFunctions.stage().clientHeight / 2) - e.touches[i].clientY);
+            const pushData = {};
+            pushData.mouseX = x * globalFunctions.getFixedValue('width');
+            pushData.mouseY = y * globalFunctions.getFixedValue('height');
+            pushData.mouseXStart = pushData.mouseX;
+            pushData.mouseYStart = pushData.mouseY;
+            pushData.identifier = e.touches[i].identifier;
+            pushData.id = globalValues.touches.length;
+            pushData.active = true;
+            globalValues.touches.push(pushData);
+        }
+    });
+    globalFunctions.stage().addEventListener('touchmove', function (e) {
+        for (let i = 0; i < e.changedTouches.length; i++) {
+            const touch = globalValues.touches.find(t => t.active && t.identifier == e.changedTouches[i].identifier);
+            const x = (e.changedTouches[i].clientX - (globalFunctions.stage().clientWidth / 2));
+            const y = ((globalFunctions.stage().clientHeight / 2) - e.changedTouches[i].clientY);
+            touch.mouseX = x;
+            touch.mouseY = y;
+            touch.timestamp = new Date();
+        }
+    })
+    globalFunctions.stage().addEventListener('touchend', function (e) {
+        for (let i = 0; i < e.changedTouches.length; i++) {
+            const touch = globalValues.touches.find(t => t.active && t.identifier == e.changedTouches[i].identifier);
+            touch.active = false;
+        }
+    });
+    globalFunctions.stage().addEventListener('touchcanel', function (e) {
+        for (let i = 0; i < e.changedTouches.length; i++) {
+            const touch = globalValues.touches.find(t => t.active && t.identifier == e.changedTouches[i].identifier);
+            touch.active = false;
+        }
+    });
+    globalFunctions.stage().addEventListener('keydown', (e) => {
+        const keyData = {};
+        const modifiers = {
+            'ctrlKey': '^',
+            'shiftKey': '+',
+            'altKey': '%',
+            'metaKey': '!'
+        }
+        const modKeys = ['control', 'shift', 'alt', 'meta'];
+        const key = e.key.toLowerCase().replace(' ', 'space');
+        keyData.down = true;
+        if (globalValues.keysDown.includes(key)) {
+            return
+        } else {
+            globalValues.keysDown.push(key);
+        }
+        if (!modKeys.includes(key)) {
+
+            let mod = '';
+            keyData.modifiers = [];
+            for (m in modifiers) {
+                if (e[m]) {
+                    mod += modifiers[m];
+                    keyData.modifiers.push(modifiers[m]);
+                }
+            };
+            mod += key;
+            keyData.modKey = mod;
+            if (mod !== key && !globalValues.keysDown.includes(mod)) globalValues.keysDown.push(mod);
+        }
+        keyData.modKey = key;
+        globalValues.keyData[key] = keyData;
+    }, true);
+
+    globalFunctions.stage().addEventListener('keyup', (e) => {
+        const key = e.key.toLowerCase().replace(' ', 'space');
+        const keyData = globalValues.keyData[key];
+        if (globalValues.keysDown.includes(key)) globalValues.keysDown.splice(globalValues.keysDown.indexOf(key), 1);
+        if (globalValues.keysDown.includes(keyData.modKey)) globalValues.keysDown.splice(globalValues.keysDown.indexOf(keyData.modKey), 1);
+        keyData.down = false;
+        keyData.modifiers = [];
+        globalValues.keyData[key] = keyData;
+    });
+
+    window.addEventListener('blur', () => {
+        for (let i in globalValues.keyData) {
+            globalValues.keyData[i].down = false;
+            globalValues.keyData[i].modifiers = [];
+        }
+        globalValues.keysDown = [];
+    });
+});
+
+
+globalFunctions.getDirection = function (startX, startY, endX, endY) {
+    return ((Maths.atan((endX - startX) / (endY - startY)) * 180) / Maths.PI) - (180 * (endY < startY));
+};
+
+globalFunctions.random = function (from, to, fixed) {
+    const d = fixed || 0;
+    return parseFloat((Maths.floor((Maths.random() * Maths.abs(to - from + 1) + from) * 10 ** d) / 10 ** d).toFixed(d));
+}
+globalFunctions.animate = function (fn, loopRuntime, dataCarry, param, repeat) {
+    repeat(loopRuntime.frames, () => { animating = true; fn(param / loopRuntime.frames); animating = false; }, () => { }, loopRuntime.FPS, undefined, dataCarry, true);
+
+};
+
+globalFunctions.applyStyles = (styles, sprite, fragment, spriteID) => {
+    // const c = /*getComputedStyle(sprite)*/ sprite.style;
+    const n = {};
+    for (let style in styles) {
+        if (styles[style] !== undefined) n[style] = styles[style];
+    }
+    if (Object.keys(n).length > 0) {
+        if (false && fragment) {
+            const fragmentedElement = fragment.appendChild(sprite.cloneNode(true));
+            fragmentedElement.setAttribute('data-id', spriteID);
+            Object.assign(fragmentedElement.style, n);
+            getSprite(spriteID).fragmentRef = fragmentedElement;
+        } else {
+            Object.assign(sprite.style, n);
+        }
+    }
+}
+
+globalFunctions.rasterise = (svg) => {
+    return new Promise(resolve => {
+        const deathstar = svg;
+        const quality = 1;
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+        img.src = deathstar;
+        img.onload = () => {
+            canvas.width = img.width * quality;
+            canvas.height = img.height * quality;
+            ctx.drawImage(img, 0, 0, img.width * quality, img.height * quality);
+            resolve(canvas.toDataURL());
+        }
+    });
+
+}
+
+globalFunctions.storeAssets = async (assets, rasterise) => {
+    const assetStore = {};
+    for (let i in assets) {
+        if (rasterise && i.split('.').pop()) assets[i] = await globalFunctions.rasterise(assets[i]);
+        const split = assets[i].split(',');
+        const data = split[1];
+        const dataType = split[0].split(':')[1].split(';')[0];
+        const byteCharacters = atob(data);
+        const byteArrays = [];
+        const sliceSize = 512;
+        for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            const slice = byteCharacters.slice(offset, offset + sliceSize);
+
+            const byteNumbers = new Array(slice.length);
+            for (let i = 0; i < slice.length; i++) {
+                byteNumbers[i] = slice.charCodeAt(i);
+            }
+
+            const byteArray = new Uint8Array(byteNumbers);
+            byteArrays.push(byteArray);
+        }
+
+        const blob = new Blob(byteArrays, { type: dataType });
+        assetStore[i] = URL.createObjectURL(blob);
+    }
+    globalValues.assetStore = assetStore;
+    project.cache.imageCache = Date.now();
+}
+
+globalFunctions.getMaxLayer = function () {
+    const temp = project.sprites;
+    let max = 0;
+    for (i = 0; i < temp.length; i++) {
+        if (temp[i].layer > max) {
+            max = temp[i].layer;
+        };
+    };
+    return max;
+};
+
+globalFunctions.moveSpritesUp = function () {
+    if (!project.sprites.map(e => e.layer).includes(0)) return;
+    const simulate = project.sprites.map(e => e.layer + 1);
+    const temp = project.sprites;
+    for (i = 0; i < temp.length; i++) {
+        let check = simulate;
+        check.splice(i, 1);
+        if (check.includes(temp[i].layer)) temp[i].layer = temp[i].layer + 1;
+    };
+};
+
+globalFunctions.update3D = function (spriteData) {
+    if (spriteData['3d'].axisX != 90 || spriteData['3d'].axisY != 90 || spriteData['3d'].rotateX != 90 || spriteData['3d'].rotateY != 90 || spriteData.z != 0) spriteData['3d'].isEnabled = true;
+    if (!globalValues.camera.force3D && !globalValues.camera['3d'] && spriteData['3d'].rotateX == 90 && spriteData['3d'].rotateY == 90 && spriteData['3d'].axisX == 90 && spriteData['3d'].axisY == 90 && spriteData.z == 0) spriteData['3d'].isEnabled = false;
+}
+
+globalFunctions.updateDirection = function (spriteData) {
+    spriteData.direction = spriteData.direction % 360;
+    spriteData['3d'].rotateX = spriteData['3d'].rotateX % 360;
+    spriteData['3d'].rotateY = spriteData['3d'].rotateY % 360;
+    spriteData['3d'].axisX = spriteData['3d'].axisX % 360;
+    spriteData['3d'].axisY = spriteData['3d'].axisY % 360;
+    spriteData['3d'].axisZ = spriteData['3d'].axisZ % 360;
+    globalFunctions.update3D(spriteData);
+};
+
+globalFunctions.updatePosition = function (spriteData) {
+    if (!isFinite(spriteData.x)) spriteData.x = 0;
+    if (!isFinite(spriteData.y)) spriteData.y = 0;
+    if (!isFinite(spriteData.z)) spriteData.z = 0;
+    globalFunctions.update3D(spriteData);
+}
+
+globalFunctions.registerScript = (script, interval, spriteData, performanceSubject, noClock) => {
+    globalValues.cycles.push({ interval: interval, script: script, lastFrame: new Date(), sprite: spriteData || null, active: true, paused: false, iterations: 0, performanceSubject: performanceSubject, noClock: noClock, terminate: function () { this.active = false } });
+    return globalValues.cycles.at(-1);
+}
+
+const scriptFunction = (animateFrame) => {
+    const startTime = new Date();
+    if (animateFrame) requestAnimationFrame(() => { scriptFunction(true) });
+    globalValues.cycles.forEach(async cycle => {
+        if (cycle.closed) return;
+        if (cycle.paused) return;
+        if (cycle.interval < 0 === !animateFrame) return;
+        if (cycle.sprite != null && (!cycle.sprite.id || (!getSprite(cycle.sprite.id) || Object.keys(getSprite(cycle.sprite.id)).length < 1))) {
+            if (getSprite(cycle.sprite.id)) cycle.closed = true;
+            return;
+        }
+        const cycleFunction = async () => {
+            cycle.queued = false;
+            cycle.script(function (interval) {
+                cycle.interval = interval;
+            }, function () {
+                cycle.interval.closed = true;
+            }, {
+                pause: function () {
+                    cycle.paused = true;
+                },
+                play: function () {
+                    cycle.paused = false;
+                }
+            }, function () {
+                return cycle.iterations;
+            });
+            cycle.iterations++;
+        }
+        if (!cycle.queued) {
+            if (cycle.interval < 0) {
+                cycle.queued = true;
+                cycleFunction();
+                // if (cycle.performanceSubject || project.resourceState == 'full') {
+                //     requestAnimationFrame(cycleFunction);
+                // } else if (project.resourceState == 'reduced') {
+                //     if (Maths.random() > 0.8) {
+                //         requestAnimationFrame(cycleFunction);
+                //     } else {
+                //         setTimeout(cycleFunction, 200);
+                //     }
+                // } else if (project.resourceState == 'idle') {
+                //     setTimeout(cycleFunction, 500);
+                // }
+
+            } else if (new Date() - cycle.lastFrame > cycle.interval) {
+                if (project.options.runtime.clock && !cycle.noClock) {
+                    if (project.options.runtime.forceSync && new Date() - cycle.lastFrame > cycle.interval * 2) {
+                        const catchUp = Maths.min(Maths.floor((new Date() - cycle.lastFrame) / cycle.interval), 10);
+                        if (catchUp > 0) cycle.lastFrame = new Date(new Date(cycle.lastFrame).getTime() + cycle.interval * catchUp);
+
+                        for (let i = 0; i < catchUp - 1; i++) {
+                            cycleFunction();
+                            if (new Date() - startTime > 200) {
+                                return;
+                            }
+
+                        }
+                    } else {
+                        cycle.lastFrame = new Date(new Date(cycle.lastFrame).getTime() + cycle.interval);
+                    }
+                } else {
+                    cycle.lastFrame = new Date();
+                }
+
+                cycleFunction();
+            }
+        }
+    });
+
+};
+setInterval(scriptFunction, 0);
+scriptFunction(true);
+
+globalFunctions.readPerformance = function () {
+    (async () => {
+        const t1 = performance.now()
+        await pause(0.05)
+        const t2 = performance.now()
+        const t3 = t2 - t1
+        globalValues.performance = 50 / t3;
+        globalFunctions.readPerformance();
+    })();
+    /*
+    globalValues.performance = 50/(new Date()-globalValues.tick);
+    if(globalValues.performance == Infinity) globalValues.performance = 1;
+    globalValues.tick = new Date();
+    */
+
+}
+
+setTimeout(globalFunctions.readPerformance, 50);
+
+    const defaultCamera = {
+    x: 0,
+    y: 0,
+    z: 0,
+    rotateX: 90,
+    rotateY: 90,
+    rotateZ: 90,
+    FOV: 800,
+    "3d": false,
+    force3D: false,
+    jumpIn: false
+};
+globalValues.camera = structuredClone(defaultCamera);
+
+function updateCamera() {
+    if (Object.keys(defaultCamera).length != Object.keys(globalValues.camera).length) {
+        let tempCamera = defaultCamera;
+        Object.assign(tempCamera, globalValues.camera);
+        globalValues.camera = tempCamera;
+    }
+    const dType = globalValues.camera['3d'] ? 'preserve-3d' : 'flat';
+    if (dType !== project?.cache?.transformStyle) {
+        globalFunctions.stage().style.transformStyle = dType;
+        globalFunctions.stage().querySelector('div#camera-viewpoint').style.transformStyle = dType;
+        globalFunctions.stage().querySelector('div#camera').style.transformStyle = dType;
+    }
+    if (project?.cache?.stageBackgroundCache !== project.options.stageBackgroundEntity + project.options.stageBackground) globalFunctions.stage().style.backgroundColor = project.options.stageBackgroundEntity ? project.options.stageBackground : 'transparent';
+    const perspective = globalValues.camera.FOV * globalFunctions.getFixedValue('depth').toFixed(6);
+    if (project?.cache?.perspective !== perspective) globalFunctions.stage().querySelector('div#plane').style.perspective = `${perspective.toFixed(2)}px`;
+    const viewpoint = `translate3d(0px, 0px, ${(perspective * globalValues.camera['3d']).toFixed(2)}px) rotateX(${globalValues.camera.rotateY.toFixed(2) - 90}deg) rotateY(${globalValues.camera.rotateX.toFixed(2) - 90}deg) rotateZ(${globalValues.camera.rotateZ.toFixed(2) - 90}deg)`
+    if (project?.cache?.camera?.viewpoint !== viewpoint) globalFunctions.stage().querySelector('div#camera-viewpoint').style.transform = viewpoint;
+    const camera = `translate3d(${(-globalValues.camera.x * globalFunctions.getFixedValue('width')).toFixed(2)}px, ${(globalValues.camera.y * globalFunctions.getFixedValue('height')).toFixed(2)}px, ${((-globalValues.camera.z * globalFunctions.getFixedValue('depth')) - perspective * globalValues.camera.jumpIn).toFixed(2)}px)`
+    if (project?.cache?.camera?.camera !== camera) globalFunctions.stage().querySelector('div#camera').style.transform = camera;
+    if (project.cache) {
+        project.cache.transformStyle = dType;
+        project.cache.stageBackgroundCache = project.options.stageBackgroundEntity + project.options.stageBackground;
+        project.cache.perspective = perspective;
+        project.cache.camera = {
+            viewpoint: viewpoint,
+            camera: camera
+        }
+    }
+}
+    
+    const functionEval = (() => {
+
+  const functionExports = () => {
+
+    function declare_variable(variableName, global) {
+      (global ? project : spriteData).variables.push({
+        name: variableName,
+        value: 0
+      });
+      return (global ? project : spriteData).variables.at(-1);
+    }
+
+    function get_variable(variableName) {
+      return spriteData.variables.find(e => e.name == variableName) || project.variables.find(e => e.name == variableName);
+    }
+
+
+
+    function move_steps(steps) {
+      change_x(Maths.cos((90 - spriteData.direction) * Maths.PI / 180) * steps);
+      change_y(Maths.sin((90 - spriteData.direction) * Maths.PI / 180) * steps);
+    };
+
+    function move_steps_3d(steps) {
+      // convert pitch and yaw from degrees to radians
+      let pitch = (90 - spriteData.direction) * Maths.PI / 180;
+      let yaw = (90 - spriteData['3d'].rotateX) * Maths.PI / 180;
+
+      // calculate the change in x, y and z using trigonometry
+      let dx = Maths.cos(pitch) * Maths.sin(yaw);
+      let dy = Maths.sin(pitch);
+      let dz = Maths.cos(pitch) * Maths.cos(yaw);
+      // update the sprite's position by multiplying the change by the steps
+      change_z(dx * steps);
+      change_y(dy * steps);
+      change_x(dz * steps);
+    }
+
+    /*function move_steps_3d(steps) {
+      // Calculate the x, y and z components of the steps based on the sprite's orientation
+      const x = steps * (Math.cos(spriteData['3d'].rotateY * Math.PI / 180) * Math.sin(spriteData.direction * Math.PI / 180) - Math.sin(spriteData['3d'].rotateY * Math.PI / 180) * Math.cos(spriteData['3d'].rotateX * Math.PI / 180) * Math.cos(spriteData.direction * Math.PI / 180));
+      const y = steps * (Math.cos(spriteData['3d'].rotateY * Math.PI / 180) * Math.cos(spriteData.direction * Math.PI / 180) + Math.sin(spriteData['3d'].rotateY * Math.PI / 180) * Math.cos(spriteData['3d'].rotateX * Math.PI / 180) * Math.sin(spriteData.direction * Math.PI / 180));
+      const z = steps * (Math.sin(spriteData['3d'].rotateY * Math.PI / 180) * Math.sin(spriteData['3d'].rotateX * Math.PI / 180) + Math.cos(spriteData['3d'].rotateY * Math.PI / 180) * Math.sin(spriteData['3d'].rotateX * Math.PI / 180));
+    
+      // Change the x, y and z coordinates accordingly
+      change_x(x);
+      change_y(y);
+      change_z(z);
+    };
+    
+    function move_steps_3d(steps) {
+      // Calculate the x, y and z components of the steps based on the sprite's orientation
+      const x = steps * (Math.cos(spriteData['3d'].rotateY * Math.PI / 180) * Math.sin(spriteData['3d'].rotateX * Math.PI / 180) - Math.sin(spriteData['3d'].rotateY * Math.PI / 180) * Math.cos(spriteData.direction * Math.PI / 180) * Math.cos(spriteData['3d'].rotateX * Math.PI / 180));
+      const y = steps * (Math.cos(spriteData['3d'].rotateY * Math.PI / 180) * Math.cos(spriteData['3d'].rotateX * Math.PI / 180) + Math.sin(spriteData['3d'].rotateY * Math.PI / 180) * Math.cos(spriteData.direction * Math.PI / 180) * Math.sin(spriteData['3d'].rotateX * Math.PI / 180));
+      const z = steps * (Math.sin(spriteData['3d'].rotateY * Math.PI / 180) * Math.sin(spriteData.direction * Math.PI / 180) + Math.cos(spriteData['3d'].rotateY * Math.PI / 180) * Math.sin(spriteData.direction * Math.PI / 180));
+     
+      // Change the x, y and z coordinates accordingly
+      change_x(x);
+      change_y(y);
+      change_z(z);
+    };
+    
+    function move_steps_3d(steps) {
+      // Calculate the x, y and z components of the steps based on the sprite's orientation
+      const x = steps * (Math.cos(spriteData['3d'].rotateX * Math.PI / 180) * Math.sin(spriteData['3d'].rotateY * Math.PI / 180) + Math.sin(spriteData['3d'].rotateX * Math.PI / 180) * Math.cos(spriteData.direction * Math.PI / 180) * Math.cos(spriteData['3d'].rotateY * Math.PI / 180));
+      const y = steps * (Math.cos(spriteData['3d'].rotateX * Math.PI / 180) * Math.cos(spriteData['3d'].rotateY * Math.PI / 180) - Math.sin(spriteData['3d'].rotateX * Math.PI / 180) * Math.cos(spriteData.direction * Math.PI / 180) * Math.sin(spriteData['3d'].rotateY * Math.PI / 180));
+      const z = steps * (Math.sin(spriteData['3d'].rotateX * Math.PI / 180) * Math.sin(spriteData.direction * Math.PI / 180));
+     
+      // Change the x, y and z coordinates accordingly
+      change_x(x);
+      change_y(y);
+      change_z(z);
+    };
+    function move_steps_3d(steps) {
+      // Calculate the inverse of the rotation matrix
+      // Subtract 90 degrees from each angle to get the actual rotation
+      const cosX = Math.cos((spriteData['3d'].rotateX - 90) * Math.PI / 180);
+      const sinX = Math.sin((spriteData['3d'].rotateX - 90) * Math.PI / 180);
+      const cosY = Math.cos((spriteData['3d'].rotateY - 90) * Math.PI / 180);
+      const sinY = Math.sin((spriteData['3d'].rotateY - 90) * Math.PI / 180);
+      const cosZ = Math.cos((spriteData.direction - 90) * Math.PI / 180);
+      const sinZ = Math.sin((spriteData.direction - 90) * Math.PI / 180);
+      const invRot = [
+        [cosY * cosZ, -cosX * sinZ + sinX * sinY * cosZ, sinX * sinZ + cosX * sinY * cosZ],
+        [cosY * sinZ, cosX * cosZ + sinX * sinY * sinZ, -sinX * cosZ + cosX * sinY * sinZ],
+        [-sinY, sinX * cosY, cosX * cosY]
+      ];
+    
+      // Multiply the steps vector by the inverse rotation matrix
+      const x = steps * (invRot[0][0] + invRot[0][1] + invRot[0][2]);
+      const y = steps * (invRot[1][0] + invRot[1][1] + invRot[1][2]);
+      const z = steps * (invRot[2][0] + invRot[2][1] + invRot[2][2]);
+    
+      // Change the x, y and z coordinates accordingly
+      change_x(x);
+      change_y(y);
+      change_z(z);
+    };*/
+    // function move_steps_3d(steps) {
+    //   const x = steps * (Math.cos((spriteData.direction - 90) * Math.PI / 180) * Math.sin((spriteData['3d'].rotateY - 90) * Math.PI / 180) + Math.sin((spriteData.direction - 90) * Math.PI / 180) * Math.cos((spriteData['3d'].rotateX - 90) * Math.PI / 180) * Math.cos((spriteData['3d'].rotateY - 90) * Math.PI / 180));
+    //   const y = steps * (Math.cos((spriteData.direction - 90) * Math.PI / 180) * Math.cos((spriteData['3d'].rotateY - 90) * Math.PI / 180) - Math.sin((spriteData.direction - 90) * Math.PI / 180) * Math.cos((spriteData['3d'].rotateX - 90) * Math.PI / 180) * Math.sin((spriteData['3d'].rotateY - 90) * Math.PI / 180));
+    //   const z = steps * (Math.sin((spriteData.direction - 90) * Math.PI / 180) * Math.sin((spriteData['3d'].rotateX - 90) * Math.PI / 180));
+    //   change_x(y); change_y(z); change_z(x);
+    // };
+
+    function set_x(x) {
+      spriteData.x = x;
+      globalFunctions.updatePosition(spriteData);
+      if (loopRuntime) loopRuntime.animate.x = false;
+    };
+
+    function change_x(x) {
+      if (loopRuntime && loopRuntime.animate.x && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, x, repeat);
+        return;
+      }
+
+      animate = true;
+      set_x(spriteData.x + x);
+      animate = undefined;
+
+    };
+
+    function change_y(y) {
+      if (loopRuntime && loopRuntime.animate.y && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, y, repeat);
+        return
+      }
+      animate = true;
+      set_y(spriteData.y + y);
+      animate = undefined;
+
+    };
+
+    function set_y(y) {
+      spriteData.y = y;
+      globalFunctions.updatePosition(spriteData);
+      if (!animate && loopRuntime) loopRuntime.animate.y = false;
+    };
+
+    function set_z(z) {
+      spriteData.z = z;
+      globalFunctions.updatePosition(spriteData);
+      if (loopRuntime) loopRuntime.animate.z = false;
+    };
+
+    function change_z(z) {
+      if (loopRuntime && loopRuntime.animate.z && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, z, repeat);
+        return;
+      }
+
+      animate = true;
+      set_z(spriteData.z + z);
+      animate = undefined;
+
+    };
+
+    function go_to(x, y, z) {
+      set_x(x || 0, loopRuntime);
+      set_y(y || 0, loopRuntime);
+      set_z(z || 0, loopRuntime);
+    };
+
+    function go_to_mouse() {
+      go_to(globalValues.mouseX, globalValues.mouseY);
+    };
+
+    function go_to_random(stayOnStage) {
+      go_to(globalFunctions.random(project.options.stageSize.width / -2 + (stayOnStage ? spriteData.dimensions().width / 2 : 0), project.options.stageSize.width / 2 - (stayOnStage ? spriteData.dimensions().width / 2 : 0)), globalFunctions.random(project.options.stageSize.height / -2 + (stayOnStage ? spriteData.dimensions().height / 2 : 0), project.options.stageSize.height / 2 - (stayOnStage ? spriteData.dimensions().height / 2 : 0)))
+    }
+
+    function rotate_left(deg) {
+      if (loopRuntime && loopRuntime.animate.rotation && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      point_in_direction(spriteData.direction - deg);
+      animate = undefined;
+    };
+
+    function rotate_x_left(deg) {
+      if (loopRuntime && loopRuntime.animate["3D"] && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_x_rotation(spriteData['3d'].rotateX - deg);
+      animate = undefined;
+    };
+
+    function rotate_y_left(deg) {
+      if (loopRuntime && loopRuntime.animate["3D"] && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_y_rotation(spriteData['3d'].rotateY - deg);
+      animate = undefined;
+    };
+
+    function rotate_y_forward(deg) {
+      if (loopRuntime && loopRuntime.animate["3D"] && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_y_rotation(spriteData['3d'].rotateY - deg);
+      animate = undefined;
+    };
+
+    function rotate_z_left(deg) {
+      if (loopRuntime && loopRuntime.animate.rotation && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      point_in_direction(spriteData.direction - deg);
+      animate = undefined;
+    };
+
+    function rotate_right(deg) {
+      if (loopRuntime && loopRuntime.animate.rotation && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      point_in_direction(spriteData.direction + deg);
+      animate = undefined;
+    };
+
+    function rotate_x_right(deg) {
+      if (loopRuntime && loopRuntime.animate["3D"] && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_x_rotation(spriteData['3d'].rotateX + deg);
+      animate = undefined;
+    };
+
+    function rotate_y_right(deg) {
+      if (loopRuntime && loopRuntime.animate["3D"] && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_y_rotation(spriteData['3d'].rotateY + deg);
+      animate = undefined;
+    };
+
+    function rotate_y_backward(deg) {
+      if (loopRuntime && loopRuntime.animate["3D"] && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_y_rotation(spriteData['3d'].rotateY + deg);
+      animate = undefined;
+    };
+
+    function rotate_z_right(deg) {
+      if (loopRuntime && loopRuntime.animate.rotation && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      point_in_direction(spriteData.direction + deg);
+      animate = undefined;
+    };
+
+    function point_in_direction(dir) {
+      spriteData.direction = dir;
+      globalFunctions.updateDirection(spriteData);
+      if (!animate && loopRuntime) loopRuntime.animate.rotation = false;
+    };
+
+    function set_x_rotation(dir) {
+      spriteData['3d'].rotateX = dir;
+      globalFunctions.updateDirection(spriteData);
+      if (!animate && loopRuntime) loopRuntime.animate["3D"] = false;
+    };
+
+    function set_y_rotation(dir) {
+      spriteData['3d'].rotateY = dir;
+      globalFunctions.updateDirection(spriteData);
+      if (!animate && loopRuntime) loopRuntime.animate["3D"] = false;
+    };
+
+    function set_z_rotation(dir) {
+      point_in_direction(dir);
+    }
+
+    function rotate_x_axis_right(deg) {
+      if (loopRuntime && loopRuntime.animate.axis && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_x_axis_rotation(spriteData['3d'].axisX + deg);
+      animate = undefined;
+    }
+
+    function rotate_x_axis_left(deg) {
+      if (loopRuntime && loopRuntime.animate.axis && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_x_axis_rotation(spriteData['3d'].axisX - deg);
+      animate = undefined;
+    }
+
+    function rotate_y_axis_right(deg) {
+      if (loopRuntime && loopRuntime.animate.axis && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_y_axis_rotation(spriteData['3d'].axisY + deg);
+      animate = undefined;
+    }
+
+    function rotate_y_axis_left(deg) {
+      if (loopRuntime && loopRuntime.animate.axis && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_y_axis_rotation(spriteData['3d'].axisY - deg);
+      animate = undefined;
+    }
+
+    function rotate_y_axis_backward(deg) {
+      if (loopRuntime && loopRuntime.animate.axis && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_y_axis_rotation(spriteData['3d'].axisY + deg);
+      animate = undefined;
+    }
+
+    function rotate_y_axis_forward(deg) {
+      if (loopRuntime && loopRuntime.animate.axis && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_y_axis_rotation(spriteData['3d'].axisY - deg);
+      animate = undefined;
+    }
+
+    function rotate_z_axis_right(deg) {
+      if (loopRuntime && loopRuntime.animate.axis && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_z_axis_rotation(spriteData['3d'].axisZ + deg);
+      animate = undefined;
+    }
+
+    function rotate_z_axis_left(deg) {
+      if (loopRuntime && loopRuntime.animate.axis && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, deg, repeat);
+        return;
+      }
+      animate = true;
+      set_z_axis_rotation(spriteData['3d'].axisZ - deg);
+      animate = undefined;
+    }
+
+
+    function set_x_axis_rotation(dir) {
+      spriteData['3d'].axisX = dir;
+      globalFunction.updateDirection(spriteData);
+      if(!animate && loopRuntime) loopRuntime.animate.axis = false
+    }
+
+    function set_y_axis_rotation(dir) {
+      spriteData['3d'].axisY = dir;
+      globalFunction.updateDirection(spriteData);
+      if(!animate && loopRuntime) loopRuntime.animate.axis = false
+    }
+
+    function set_z_axis_rotation(dir) {
+      spriteData['3d'].axisZ = dir;
+      globalFunction.updateDirection(spriteData);
+      if(!animate && loopRuntime) loopRuntime.animate.axis = false
+    }
+
+    function point_towards_mouse() {
+      point_in_direction(globalFunctions.getDirection(globalValues.camera.x-spriteData.x, globalValues.camera.y-spriteData.y, globalValues.mouseX, globalValues.mouseY));
+    };
+
+    function point_towards_random() {
+      point_in_direction(globalFunctions.random(-180, 180));
+    }
+
+    function define_camera_distance(cameraDistance) {
+      globalValues.camera.FOV = cameraDistance * 10;
+    };
+
+    function x_position() {
+      return sprietData.x;
+    }
+
+    function y_position() {
+      return sprietData.y;
+    }
+
+    function direction() {
+      return sprietData.direction;
+    }
+
+    function camera_distance() {
+      return sprietData['3d'].cameraDistance;
+    }
+
+    function x_rotation() {
+      return sprietData['3d'].rotateX;
+    }
+
+    function y_rotation() {
+      return sprietData['3d'].rotateY;
+    }
+
+    function z_rotation() {
+      return sprietData.direction;
+    }
+
+    function set_costume(src) {
+      spriteData.costume = src;
+    };
+
+    function set_size(size) {
+      spriteData.size = size;
+      if (!animate && loopRuntime) loopRuntime.animate.scale = false;
+    };
+
+    function change_size(size) {
+      if (loopRuntime && loopRuntime.animate.scale && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, size, repeat);
+        return;
+      }
+      animate = true;
+      set_size(spriteData.size + size);
+      animate = undefined;
+    };
+
+    function set_height(height) {
+      spriteData.height = height;
+      if (!animate && loopRuntime) loopRuntime.animate.height = false;
+    };
+
+    function change_height(height) {
+      if (loopRuntime && loopRuntime.animate.height && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, height, repeat);
+        return;
+      }
+      animate = true;
+      set_height(spriteData.height + height);
+      animate = undefined;
+    };
+
+    function set_width(width) {
+      spriteData.width = width;
+      if (!animate && loopRuntime) loopRuntime.animate.width = false;
+    };
+
+    function change_width(width) {
+      if (loopRuntime && loopRuntime.animate.width && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, width, repeat);
+        return;
+      }
+      animate = true;
+      set_width(spriteData.width + width);
+      animate = undefined;
+    };
+
+    function set_image_height(height) {
+      spriteData.imageHeight = height;
+      if (!animate && loopRuntime) loopRuntime.animate.imageHeight = false;
+    };
+
+    function change_image_height(height) {
+      if (loopRuntime && loopRuntime.animate.imageHeight && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, height, repeat);
+        return;
+      }
+      animate = true;
+      set_image_height(spriteData.imageHeight + height);
+      animate = undefined;
+    };
+
+    function set_image_width(width) {
+      spriteData.imageWidth = width;
+      if (!animate && loopRuntime) loopRuntime.animate.imageWidth = false;
+    };
+
+    function change_image_width(width) {
+      if (loopRuntime && loopRuntime.animate.imageWidth && !animating && project.options.runtime.animate && globalValues.CPS < globalValues.FPS) {
+        globalFunctions.animate(arguments.callee, loopRuntime, spriteData, width, repeat);
+        return;
+      }
+      animate = true;
+      set_image_width(spriteData.imageWidth + height);
+      animate = undefined;
+    };
+
+    function show() {
+      spriteData.hidden = false;
+    };
+
+    function hide() {
+      spriteData.hidden = true;
+    };
+
+    function go_to_front() {
+      spriteData.layer = globalFunctions.getMaxLayer() + 1
+    };
+
+    function go_to_back() {
+      globalFunctions.moveSpritesUp();
+      spriteData.layer = 0;
+    };
+
+    function go_forward(layers) {
+      spriteData.layer = spriteData.layer + layers;
+    };
+
+    function go_backward(layers) {
+      spriteData.layer = spriteData.layer - layers;
+    };
+
+    function go_to_layer(layer) {
+      spriteData.layer = layer;
+    };
+
+    function set_opacity(opacity) {
+      spriteData.opacity = opacity;
+    };
+
+    function change_opacity(opacity) {
+      spriteData.opacity = spriteData.opacity + opacity;
+    };
+
+    function set_hue(hue) {
+      spriteData.hue = hue;
+    };
+
+    function change_hue(hue) {
+      spriteData.hue = spriteData.hue + hue;
+    };
+
+    function set_roundness(roundness) {
+      spriteData.roundness = roundness;
+    };
+
+    function change_roundness(roundness) {
+      spriteData.roundness = spriteData.roundness + roundness;
+    };
+
+    function size() {
+      return spriteData.size;
+    }
+
+    function height() {
+      return spriteData.height;
+    }
+
+    function width() {
+      return spriteData.width;
+    }
+
+    function imageHeight() {
+      return spriteData.imageHeight;
+    }
+
+    function imageWidth() {
+      return spriteData.imageWidth;
+    }
+
+    function shown() {
+      return !spriteData.hidden;
+    }
+
+    function layer() {
+      return spriteData.layer;
+    }
+
+    function opacity() {
+      return spriteData.opacity;
+    }
+
+    function hue() {
+      return spriteData.hue;
+    }
+
+    function roundness() {
+      return spriteData.roundness;
+    }
+
+    function clone(parentComponent) {
+      if (spriteData.global) return;
+      const cloneElem = spriteData.original.ref.insertAdjacentElement('AfterEnd', spriteData.original.ref.cloneNode(true));
+      const newClone = createSprite(cloneElem, undefined, false, true, false, false, spriteData.component, parentComponent == undefined ? spriteData.parentComponent : parentComponent);
+      getSprite(newClone).ref.id = 'sprite#' + getSprite(newClone).id;
+      getSprite(newClone).original = spriteData.original;
+      getSprite(newClone).isOriginal = false;
+      const preventCopy = ['clones', 'freeze', 'clone', 'children', 'dimensions', 'scripts', 'id', 'internalID', 'parent', 'parentComponent', 'isDefault', 'isOriginal', 'layer', 'original', 'ref', 'fragmentRef', 'renderProcess', 'run', 'terminate', 'sounds', 'updating', 'updateCostume'];
+      for (i in spriteData) {
+        if (!preventCopy.includes(i)) {
+          // if(typeof spriteData[i] == 'function') top.console.log(i);
+          getSprite(newClone)[i] = typeof spriteData[i] == 'function' ? spriteData[i] : structuredClone(spriteData[i]);
+        }
+      }
+      spriteData.original.clones.push(newClone);
+      if (spriteData.component) {
+        // function cloneChildren(sprite, withParent) {
+        //   for (let i of sprite.children) {
+        //     getSprite(i).clone(withParent);
+        //     cloneChildren(getSprite(i), getSprite(i).internalID);
+        //   }
+        //   for (let i of sprite.clones) {
+        //     getSprite(i).clone(withParent);
+        //   }
+        // }
+        const children = [...spriteData.children];
+        for (let i of children) {
+          project.sprites.find(e => e.internalID == i).clone(getSprite(newClone).internalID);
+          if (Math.random() > 0.999) return;
+        }
+
+      }
+
+      spriteData.original.ref.dispatchEvent(new CustomEvent('clone', {
+        detail: {
+          spriteData: getSprite(newClone)
+        }
+      }));
+      return newClone;
+    };
+
+    function terminateClone() {
+      if (!spriteData.original) {
+        spriteData.terminate(!0);
+      }
+    }
+    const wait = (waitTime) => {
+      return new Promise((resolve) => {
+        setTimeout(resolve, waitTime);
+      });
+    };
+
+    async function pause(seconds) {
+      await wait(seconds * 1000)
+    };
+
+    function preload_sound(sound) {
+      return new Promise((resolve, reject) =>{
+        const audioContext = new Audio(globalFunctions.getAsset(sound));
+        audioContext.oncanplaythrough = resolve;
+        audioContext.onerror = reject;
+      });
+    }
+
+    function play_sound(sound, options) {
+      const audioContext = new Audio(globalFunctions.getAsset(sound));
+      audioContext.playbackRate = options && options.speed ? (options.speed / 100 + 1 || options.pitch / 100 + 1 || 1) : 1;
+      audioContext.volume = options && options.volume ? (options.volume / 100 || 1) : 1;
+      if(!options || !options.pause) audioContext.play();
+      spriteData.sounds.push({});
+      const id = spriteData.sounds.length - 1;
+      const audioObject = spriteData.sounds[id];
+      audioObject.audio = sound;
+      audioObject.context = audioContext
+      audioObject.id = spriteData.sounds.length - 1;
+      audioObject.ended = false;
+      audioObject['until_done'] = new Promise((resolve) => {
+        audioContext.onended = () => { spriteData.sounds[id].ended = true; resolve() }
+      });
+      audioObject['loaded'] = new Promise((resolve) => {
+        audioContext.oncanplaythrough = resolve;
+      })
+
+      audioObject.stop = function () {
+        this.context.pause();
+        this.context.currentTime = 0;
+      }
+      audioObject.pause = function () {
+        this.context.pause();
+      }
+      audioObject.resume = function () {
+        this.context.play();
+      }
+
+      return spriteData.sounds[id];
+
+    }
+
+    function createEvent(eventName, fn, targetSprite) {
+      let functions;
+      if (getSprite(eventName) && getSprite(eventName).placeholder) {
+        functions = getSprite(eventName).functions;
+        getSprite(eventName).event = null;
+      }
+      const event = {
+        sprite: typeof spriteData !== 'undefined' ? spriteData.id : 0, placeholder: eventName == null, active: eventName !== null, id: project.events.length, event: eventName, function: fn, functions: eventName == null ? [{ sprite: typeof spriteData !== 'undefined' ? spriteData.id : 0, fn: fn }] : (functions ? [functions] : []), terminate: function () {
+          this.active = false;
+        }
+      };
+      project.events.push(event);
+
+      if (typeof targetSprite == 'object') {
+        addEventHook(project.events.at(-1).id, targetSprite);
+      } else if (typeof targetSprite !== 'undefined') {
+        (targetSprite ? spriteData.ref : globalFunctions.stage()).addEventListener(event.event, (eventData) => { globalFunctions.execEvent(event.id, eventData) });
+        console.warn('targetSprite parameter in createEvent is no longer supported. Use addEventHook instead.');
+      }
+      return event.id;
+    }
+
+    function addEvent(id, fn) {
+      if (getEvent(id) == undefined) {
+        createEvent(null, fn);
+      } else {
+        getEvent(id).functions.push({ sprite: typeof spriteData !== 'undefined' ? spriteData.id : 0, fn: fn });
+      }
+
+
+    }
+
+    function addEventHook(id, options) {
+      const event = getEvent(id);
+      let currentHook = project.events.find(e => e.hook == true && e.event == options.event && e.targetSprite == (options.spriteElement ? (options.target == 'undefined' ? spriteData.id : options.target) : null));
+      if (!currentHook) {
+        project.events.push({
+          hook: true,
+          event: options.event,
+          targetSprite: options.spriteElement ? (options.target || spriteData.id) : null,
+          events: [],
+          active: true,
+          terminate: function () {
+            this.active = false;
+          }
+        });
+        const hook = project.events[project.events.length - 1];
+        (hook.targetSprite !== null ? getSprite(hook.targetSprite).ref : globalFunctions.stage()).addEventListener(options.event, eventData => {
+          if (!hook.active) return;
+          hook.events.forEach(thisHook => {
+            if (!thisHook.active) return;
+            globalFunctions.execEvent(thisHook.eventID, eventData);
+          });
+        });
+        currentHook = hook;
+      }
+      currentHook.events.push({
+        eventID: event.id,
+        id: currentHook.events.length,
+        active: true,
+        terminate: function () {
+          this.active = false;
+        }
+      });
+    }
+
+    async function repeat(n, callback, options, _CPS, _m, _dataCarry, _forceRedirect, _runtimeCarry, _promise) {
+      if (project.terminated) return;
+      if (!(_forceRedirect || project.options.runtime.supportRepeatUpgrade)) return legacy_repeat(n, callback, options, _CPS, _m, _dataCarry, _forceRedirect, _runtimeCarry, _promise);
+      if (options?.noAnimate) {
+        for (_ of new Array(n)) {
+          if (abandonShip(spriteData)) break;
+          callback();
+          if (abandonShip(spriteData)) break;
+        }
+        if (options?.callback) options?.callback();
+      } else {
+        let promiseResolve;
+        const promise = new Promise(resolve => promiseResolve = resolve);
+        const loopRuntime = {};
+        globalFunctions.registerScript(async (Pillor_changeInterval, Pillor_terminate, Pillor_pause, Pillor_iterations) => {
+          Pillor_pause.pause();
+          if (Pillor_iterations() >= n) {
+            if (options?.callback) options?.callback();
+            promiseResolve();
+            Pillor_terminate();
+            return;
+          }
+          if (!options?.CPS) Pillor_changeInterval(1000 / globalValues.CPS);
+          if (project.options?.runtime.supportAnimate) {
+            loopRuntime.animate = { x: true, y: true, z: true, scale: true, height: true, width: true, imageHeight: true, imageWidth: true, rotation: true, axis: true, "3D": true };
+            loopRuntime.frames = Maths.floor(globalValues.FPS / globalValues.CPS);
+            loopRuntime.FPS = globalValues.FPS;
+          }
+          if (abandonShip(spriteData)) return;
+          await callback();
+          if (abandonShip(spriteData)) return;
+          Pillor_pause.play();
+        }, options?.CPS || (1000 / globalValues.CPS), spriteData, false, true);
+        return promise;
+      }
+    }
+
+    async function legacy_repeat(n, callback, callback2, CPS, m, dataCarry, forceRedirect, runtimeCarry, promise) {
+      if (project.terminated) return;
+      console.warn('you are using a deprecated version of repeat, see options > project flags to upgrade');
+      // if (!(forceRedirect || project.options.runtime.supportAnimate)) return legacy_repeat(n, callback, callback2, CPS, m);
+      if (abandonShip(spriteData)) return;
+      n = parseFloat(n);
+      const runtime = runtimeCarry || {};
+      let isNew = false;
+      if (project.options.runtime.supportAnimate) {
+        runtime.animate = { x: true, y: true, z: true, scale: true, height: true, width: true, imageHeight: true, imageWidth: true, rotation: true, axis: true, "3D": true };
+        runtime.frames = Maths.floor(globalValues.FPS / globalValues.CPS);
+        runtime.FPS = globalValues.FPS;
+      }
+      if (!isFinite(m)) {
+        m = 1;
+        isNew = true;
+      }
+      if (m > n) {
+        if (abandonShip(spriteData)) return;
+        if (callback2) callback2();
+        if (abandonShip(spriteData)) return;
+        promise();
+      } else {
+        loopRuntime = runtime;
+        loopRuntime.measure = loopRuntime.schedule || performance.now();
+        loopRuntime.delay = 1000 / (CPS || globalValues.CPS);
+        loopRuntime.delay -= project.options.runtime.clock ? performance.now() - loopRuntime.measure : 0;
+        if (abandonShip(spriteData)) return;
+        await callback();
+        if (abandonShip(spriteData)) return;
+        if (spriteData == {} || (loopRuntime.terminated && !spriteData.global)) return;
+        let newPromise = null;
+        let returnPromise;
+        if (isNew) returnPromise = new Promise((resolve) => { newPromise = resolve; });
+
+        loopRuntime.schedule = performance.now() + loopRuntime.delay;
+
+        setTimeout(legacy_repeat, loopRuntime.delay, n, callback, callback2, CPS, m + 1, dataCarry, true, runtimeCarry, newPromise || promise);
+        if (isNew) return returnPromise;
+      }
+    };
+
+    // function legacy_repeat(n, callback, animate, callback2, dataCarry) {
+    //   console.warn('legacy_repeat is deprecated');
+    //   if (dataCarry === undefined) {
+    //     dataCarry = spriteData;
+    //   } else {
+    //     if (!spriteData) spriteData = dataCarry;
+    //   }
+    //   for (i = 0; i < n; i++) {
+    //     if (animate) {
+    //       setTimeout(callback(), 10 * i, dataCarry);
+    //     } else {
+    //       callback();
+    //     };
+    //   };
+    //   if (callback2) {
+    //     if (animate) {
+    //       setTimeout(callback2, (1000 / globalValues.CPS) * (n + 1), dataCarry)
+    //     } else {
+    //       callback2()
+    //     }
+    //   }
+    // };
+
+    function do_repeat(n, callback, callback2, CPS, m, dataCarry) {
+      return repeat(n, callback, callback2, CPS, undefined, dataCarry, true);
+    }
+
+    async function forever(callback, CPS, dataCarry, runtimeCarry) {
+      if (project.terminated) return;
+      // const runtime = runtimeCarry || {};
+      // if (project.options.runtime.supportAnimate) {
+      //   runtime.animate = { x: true, y: true, z: true, scale: true, height: true, width: true, imageHeight: true, imageWidth: true, rotation: true, axis: true, "3D": true };
+      //   runtime.frames = Maths.floor(globalValues.FPS / globalValues.CPS);
+      //   runtime.FPS = globalValues.FPS;
+      // }
+      // if (dataCarry === undefined) {
+      //   // dataCarry = spriteData;
+      // } else {
+      //   // spriteData = dataCarry;
+      // }
+      // if (spriteData == {} || (runtime.terminated && !spriteData.global)) return;
+      // loopRuntime = runtime;
+      // loopRuntime.measure = loopRuntime.schedule || performance.now();
+      // loopRuntime.delay = 1000 / (CPS || globalValues.CPS);
+      // loopRuntime.delay -= performance.now() - loopRuntime.measure;
+      // if (abandonShip(spriteData)) return;
+      // await callback();
+      // if (abandonShip(spriteData)) return;
+      // loopRuntime.schedule = performance.now() + loopRuntime.delay;
+      // setTimeout(forever, loopRuntime.delay - (project.options.runtime.clock ? performance.now() - loopRuntime.measure : 0), callback, CPS, dataCarry, loopRuntime);
+      const loopRuntime = {};
+      globalFunctions.registerScript(async (Pillor_changeInterval, _Pillor_terminate, Pillor_pause) => {
+        Pillor_pause.pause();
+        if (!CPS) Pillor_changeInterval(1000 / globalValues.CPS);
+        if (project.options.runtime.supportAnimate) {
+          loopRuntime.animate = { x: true, y: true, z: true, scale: true, height: true, width: true, imageHeight: true, imageWidth: true, rotation: true, axis: true, "3D": true };
+          loopRuntime.frames = Maths.floor(globalValues.FPS / globalValues.CPS);
+          loopRuntime.FPS = globalValues.FPS;
+        }
+        if (abandonShip(spriteData)) return;
+        await callback();
+        if (abandonShip(spriteData)) return;
+        Pillor_pause.play();
+      }, CPS || (1000 / globalValues.CPS), spriteData, false, true);
+    }
+
+    function add(v1, v2) {
+      return parseFloat(v1) + parseFloat(v2);
+    }
+
+    function subtract(v1, v2) {
+      return parseFloat(v1) - parseFloat(v2);
+    }
+
+    function multiply(v1, v2) {
+      return parseFloat(v1) * parseFloat(v2);
+    }
+
+    function divide(v1, v2) {
+      return parseFloat(v1) / parseFloat(v2);
+    }
+
+    function greater_than(v1, v2) {
+      return parseFloat(v1) > parseFloat(v2);
+    }
+
+    function less_than(v1, v2) {
+      return parseFloat(v1) < parseFloat(v2);
+    }
+
+    function equal_to(v1, v2) {
+      return v1.toString().toLowerCase() == v2.toString().toLowerCase();
+    }
+
+    function equals(v1, v2) {
+      return v1 === v2;
+    }
+
+    function and(b1, b2) {
+      return b1 && b2;
+    }
+
+    function or(b1, b2) {
+      return !!(b1 || b2);
+    }
+
+    function not(b) {
+      return !b;
+    }
+
+    function join(v1, v2) {
+      return v1.toString() + v2.toString();
+    }
+
+    function letter_of(n, string) {
+      return string.toString()[n - 1];
+    }
+
+    function length_of(string) {
+      return string.toString().length;
+    }
+
+    function contains(string, v) {
+      return string.toLowerCase().includes(v.toLowerCase());
+    }
+
+    function mod(v1, v2) {
+      return parseFloat(v1) % parseFloat(v2);
+    }
+
+    function round(v) {
+      return Maths.round(parseFloat(v));
+    }
+
+    function to_the_power_of(v1, v2) {
+      return parseFloat(v1) ** parseFloat(v2);
+    }
+
+
+    // END
+  }
+  return functionExports.toString();
+})()
+    let focused = true;
+window.addEventListener('blur', () => {
+  focused = false;
+});
+
+window.addEventListener('focus', () => {
+  focused = true;
+});
+let abandoning = false;
+function abandonShip(spriteData) {
+  if (project.idle || !project.abandon) return false;
+  if (project.terminated) return true;
+  if (performance.now() - globalValues.abandonShip > (project.options.runtime.executionTime || 2000)) {
+    if (abandoning) {
+      project.stop();
+      project.abandon(typeof spriteData == 'undefined' ? '' : spriteData);
+      return window.focused ? true : false;
+    } else {
+      abandoning = true;
+      globalValues.abandonShip = performance.now();
+      // console.log('Abandon Ship');
+      // top.console.log(typeof spriteData == 'undefined' ? '' : spriteData);
+    }
+  } else {
+    abandoning = false;
+  }
+}
+
+function updateSprite(spriteID, data, fragment) {
+  if (spriteID == null || data.global) { return };
+  if (abandonShip(data)) return;
+  const boundsCached = data.cache.bounds;
+  let x = -((boundsCached ? boundsCached.width : spriteID.clientWidth) / 2);
+  let y = -((boundsCached ? boundsCached.height : spriteID.clientHeight) / 2);
+  if (!boundsCached) {
+    data.cache.bounds = { update: true };
+  }
+  if (!data.positioned) {
+    spriteID.style.position = 'absolute';
+    spriteID.style.userSelect = 'none';
+    spriteID.style.webkitUserDrag = 'none';
+    spriteID.style.touchAction = 'manipulation';
+    spriteID.style.willChange = 'transform';
+    spriteID.loading = 'eager';
+
+    data.positioned = true;
+  }
+  let distanceFromCamera = 0;
+  let fadeAway = 1;
+  if (project.options.runtime.renderDistance && globalValues.camera['3d'] && !data.component) {
+    const sizeOffset = Maths.max(data.cache.bounds.width * data.width / 100 * globalFunctions.getFixedValue('width'), data.cache.bounds.height * data.height / 100 * globalFunctions.getFixedValue('height')) * data.size / 100 / 2;
+    distanceFromCamera = Maths.sqrt(Maths.max(Maths.abs((data.x - globalValues.camera.x)) - sizeOffset, 0) ** 2 + Maths.max(Maths.abs((data.y - globalValues.camera.y)) - sizeOffset, 0) ** 2 + Maths.max(Maths.abs((data.z - globalValues.camera.z)) - sizeOffset, 0) ** 2);
+    if (project.options.runtime.renderDistance) fadeAway = distanceFromCamera > project.options.runtime.renderDistance ? 0 : (distanceFromCamera > project.options.runtime.renderDistance - project.options.runtime.renderFadeDistance ? Maths.min((project.options.runtime.renderDistance - distanceFromCamera) / project.options.runtime.renderFadeDistance, 1) : 1);
+    // if (project.options.runtime.renderDistance) fadeAway = distanceFromCamera > project.options.runtime.renderDistance - project.options.runtime.renderFadeDistance ? Maths.max(Maths.min(project.options.runtime.renderDistance, project.options.runtime.renderDistance - distanceFromCamera) + project.options.runtime.renderFadeDistance, 0) : 1
+  }
+  data.invisible = fadeAway <= 0;
+  if (data.invisible && data.cache.invisible && !data.cache.updateCostume) return;
+  data.cache.invisible = data.invisible
+  let motionBlur = 0;
+  if (project.options.runtime.motionBlur) {
+    distanceFromPrevious = Maths.sqrt((data.x - data.cache.x) ** 2 + (data.y - data.cache.y) ** 2 + (data.z - data.cache.z) ** 2);
+    motionBlur = distanceFromPrevious;
+  }
+  if (spriteID.tagName == 'IMG') {
+    const newSRC = () => { return data.costume == null ? (data.cache.src || spriteID.getAttribute('src')) : globalFunctions.getAsset(data.costume) };
+
+    if (data.cache.updateCostume || data.cache.costume != data.costume || data.cache.imageCache != project.cache.imageCache/* || (!data.cache.costume && new URL((data.cache.src || spriteID.getAttribute('src')), location.href).href.split('#')[0] !== new URL(newSRC(), document.querySelector('base') ? document.querySelector('base').href : location.href).href.split('#')[0])*/) {
+
+      spriteID.setAttribute('src', newSRC());
+      data.cache.src = spriteID.getAttribute('src');
+      data.cache.updateCostume = false;
+      // if(spriteID.tagName == 'SVG'){
+      //   (async () =>{
+      //     const SVG = new DOMParser().parseFromString(await (await fetch(newSRC)).text(), 'image/svg+xml');
+      //     for(let i of SVG.children[0].attributes) {
+      //       spriteID.setAttribute(i.name, i.value);
+      //     }
+      //     spriteID.innerHTML = SVG.children[0].innerHTML;
+      //   })()
+      // }
+    };
+  }
+  data.cache.costume = data.costume;
+  data.cache.imageCache = project.cache.imageCache;
+
+  if (globalValues.camera.force3D && globalValues.camera['3d']) data['3d'].isEnabled = true;
+  const CSSUpdates = {
+
+    top: '50%',
+    left: '50%',
+    marginLeft: x + 'px',
+    marginTop: y + 'px',
+    height: data.imageHeight === null ? 'unset' : data.imageHeight + 'px',
+    width: data.imageWidth === null ? 'unset' : data.imageWidth + 'px',
+    transform: `${data['3d'].isEnabled ? ` rotateX(${parseFloat((data['3d'].axisY - 90).toFixed(2)) + 0}deg) rotateY(${parseFloat((data['3d'].axisX - 90).toFixed(2)) + 0}deg)` : ``} rotate(${parseFloat((data['3d'].axisZ - 90).toFixed(2)) + 0}deg) translate(${parseFloat(((data.x) * globalFunctions.getFixedValue('width')).toFixed(2)) + 0}px, ${parseFloat((-(data.y) * globalFunctions.getFixedValue('height')).toFixed(2)) + 0}px) ${data['3d'].isEnabled ? ` translateZ(${parseFloat(((data.z) * globalFunctions.getFixedValue('depth')).toFixed(2)) + 0}px) rotateX(${parseFloat((data['3d'].rotateY - 90).toFixed(2)) + 0}deg) rotateY(${parseFloat((data['3d'].rotateX - 90).toFixed(2)) + 0}deg)` : ``} rotate(${parseFloat((data.direction - 90).toFixed(2)) + 0}deg) ${data.model || data['3d'].isEnabled ? `scale3d(${parseFloat((data.size / 100 * (data.component ? 1 : globalFunctions.getFixedValue('scale'))).toFixed(2)) + 0}, ${parseFloat((data.size / 100 * (data.component ? 1 : globalFunctions.getFixedValue('scale'))).toFixed(2)) + 0}, ${parseFloat((data.size / 100 * (data.component ? 1 : globalFunctions.getFixedValue('scale'))).toFixed(2)) + 0})` : `scale(${parseFloat((data.size / 100 * (data.component ? 1 : globalFunctions.getFixedValue('scale'))).toFixed(2)) + 0})`} scaleX(${parseFloat((data.width / 100).toFixed(2)) + 0}) scaleY(${parseFloat((data.height / 100).toFixed(2)) + 0}) `,
+    transformStyle: globalValues.camera['3d'] ? 'preserve-3d' : 'flat',
+    zIndex: globalValues.camera['3d'] ? undefined : (project.engine?.drag && parent.getSelectedSprite() == data.id ? 999999999 : data.layer),
+    borderRadius: (data.roundness / 2) + '%',
+    filter: data.component ? 'none' : `hue-rotate(${data.hue * 1.8}deg) blur(${motionBlur / (globalValues.FPS / 1)}px)`,
+    opacity: (data.opacity / 100) * fadeAway,
+    backgroundImage: data.hidden ? 'none' : (data.texture.costume ? `url('${globalFunctions.getAsset(data.texture.costume)}')` : 'unset'),
+    backgroundSize: data.texture.fill ? 'cover' : (data.texture.size !== null ? data.texture.size + '%' : 'contain'),
+    backgroundRepeat: data.texture.repeat ? 'repeat' : 'no-repeat',
+    backgroundPositionX: `calc(50% + ${data.texture.x + '%'})`,
+    backgroundPositionY: `calc(50% - ${data.texture.y + '%'})`,
+
+  };
+
+  if (data.cache.maxSize && project.options.runtime.redrawSVG) {
+    const maxX = data.cache.maxSize * data.cache.maxWidth / 120 ** 2;
+    const maxY = data.cache.maxSize * data.cache.maxHeight / 120 ** 2;
+    const currentX = data.size * data.width / 100 ** 2;
+    const currentY = data.size * data.height / 100 ** 2;
+    if (currentX.toFixed(15) > maxX.toFixed(15) && data.cache.redrawX !== maxX) {
+      data.cache.redraw = true;
+      data.cache.redrawX = maxX;
+    }
+    if (currentY.toFixed(15) > maxY.toFixed(15) && data.cache.redrawY !== maxY) {
+      data.cache.redraw = true;
+      data.cache.redrawY = maxY;
+    }
+  }
+
+  Object.keys(CSSUpdates).forEach(e => {
+    let currentValue = CSSUpdates[e];
+    if (data.cache[e] == currentValue) CSSUpdates[e] = undefined;
+    data.cache[e] = currentValue;
+  });
+  if (Object.keys(CSSUpdates).length > 0) globalFunctions.applyStyles(CSSUpdates, spriteID, fragment, data.id);
+  const visibility = data.hidden || fadeAway == 0 ? 'hidden' : 'visible';
+  if (visibility !== data.cache.visibility) {
+    spriteID.style.contentVisibility = visibility;
+    spriteID.style.pointerEvents = visibility == 'visible' ? 'all' : 'none';
+  }
+  data.cache.visibility = visibility;
+  if (project.engine && (project.engine?.drag != data.cache.drag || data.cache.selectedSprite != parent.getSelectedSprite)) (data.component ? spriteID.querySelector('img[id*=sprite][id*=component-]') : spriteID).style.cursor = project.engine?.drag && parent.getSelectedSprite() == data.id ? 'move' : 'default';
+  ['size', 'height', 'width'].forEach(e => {
+    if (data.cache[e] != data[e]) data.cache.bounds.update = true;
+    data.cache[e] = data[e] + 0;
+  });
+
+
+
+  data.cache.x = data.x;
+  data.cache.y = data.y;
+  data.cache.z = data.z;
+  data.cache.imageHeight = data.imageHeight;
+  data.cache.imageWidth = data.imageWidth;
+  data.cache.drag = project.engine?.drag;
+  data.cache.selectedSprite = parent.getSelectedSprite();
+  if (!data.cache.maxSize || data.size >= data.cache.maxSize) data.cache.maxSize = data.size * 1.2;
+  if (!data.cache.maxHeight || data.height >= data.cache.maxHeight) data.cache.maxHeight = data.height * 1.2;
+  if (!data.cache.maxWidth || data.width >= data.cache.maxWidth) data.cache.maxWidth = data.width * 1.2;
+
+
+  if (data.cache.bounds.update) {
+    data.cache.bounds.width = spriteID.clientWidth;
+    data.cache.bounds.height = spriteID.clientHeight;
+    if (data.cache.bounds.width + data.cache.bounds.height > 0) data.cache.bounds.update = false;
+  }
+  return fragment;
+
+
+};
+
+function initSprite(spriteID, data, skipInit) {
+  if (data.global == true) {
+    try { spriteID.remove() } catch (e) { }
+    return;
+  };
+  if (project.options.runtime.sync) {
+    project.render.push(data);
+  } else {
+    if (!skipInit) updateSprite(spriteID, data);
+    data.renderProcess = setTimeout(function () { initSprite(spriteID, data); }, 1000 / ((globalFunctions.is_sprite_on_stage(data) || !project.options.runtime.clock || !data.ref) ? globalValues.FPS : globalValues.fpsDrop));
+  }
+};
+
+function createSprite(image, name, isDefault, skipInit, defaults, camera, component, parentComponent, internalID) {
+  project.sprites.push({});
+  const id = project.sprites.length - 1;
+  const sprite = project.sprites[id];
+
+  const assignElement = typeof image == 'object' && !(image == null && component);
+  if (assignElement && image?.tagName == 'IMG') {
+    image.addEventListener('error', (e) => {
+      e.currentTarget.classList.remove('noImage');
+      e.currentTarget.classList.add('noImage');
+    });
+    image.addEventListener('load', (e) => {
+      e.currentTarget.classList.remove('noImage');
+    });
+  }
+  const spriteParent = parentComponent ? project.sprites.find(e => e && e.internalID == parentComponent) : null;
+
+  if (!assignElement) {
+    const element = document.createElement((image && ['GLTF', 'GLB', 'DAE', 'FBX', 'OBJ', 'MTL', 'STL', 'BABYLON', 'PLY', '3MF', 'WRL', 'VRML', 'USDZ'].includes(image.split('.').pop().toUpperCase())) ? (sprite.model = true, 'x-model') : (sprite.model = false, component ? 'div' : 'img'));
+    element.id = 'sprite#' + id;
+    element.addEventListener('error', (e) => {
+      e.currentTarget.classList.remove('noImage');
+      e.currentTarget.classList.add('noImage');
+    });
+    element.addEventListener('load', (e) => {
+      e.currentTarget.classList.remove('noImage');
+    });
+    if (component) {
+      const componentPlaceholder = document.createElement('img');
+      componentPlaceholder.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4=';
+
+      componentPlaceholder.id = 'sprite#component-' + id;
+      element.appendChild(componentPlaceholder);
+      Object.assign(componentPlaceholder.style, {
+        position: 'absolute',
+        userSelect: 'none',
+        webkitUserDrag: 'none',
+        touchAction: 'manipulation',
+        top: '50%',
+        left: '50%',
+        translate: '-50% -50%',
+        zIndex: '999999999',
+        height: '256px',
+        width: '256px',
+        contentVisibility: 'hidden',
+        pointerEvents: 'none'
+      });
+    }
+
+    (spriteParent ? spriteParent.ref : document.querySelector('div#camera')).appendChild(element);
+  }
+  if (parentComponent && image !== null && typeof image === 'object' && spriteParent !== null && spriteParent.ref) spriteParent.ref.appendChild(image);
+  sprite.name = name || ('Object' + id);
+  delete project.spriteMap[sprite.name];
+  sprite.ref = assignElement ? image : document.getElementById('sprite#' + id);
+  if (sprite.ref) {
+    sprite.ref.addEventListener('mousedown', () => {
+      sprite.dragData.dragging = true;
+      sprite.dragData.dragX = sprite.x - globalValues.mouseX;
+      sprite.dragData.dragY = sprite.y - globalValues.mouseY;
+      sprite.dragData.dragZX = sprite.z - globalValues.mouseX;
+      sprite.dragData.dragZY = sprite.z - globalValues.mouseY;
+      sprite.dragData.mouseX = globalValues.mouseX;
+      sprite.dragData.mouseY = globalValues.mouseY;
+      globalFunctions.stage().addEventListener('mouseup', () => {
+        sprite.dragData.dragging = false;
+        sprite.dragData.dragX = null;
+        sprite.dragData.dragY = null;
+        sprite.dragData.dragZX = null;
+        sprite.dragData.dragZY = null;
+        sprite.dragData.mouseX = null;
+        sprite.dragData.mouseY = null;
+      }, { once: true });
+    });
+    sprite.ref.addEventListener('mouseup', () => {
+      sprite.dragData.dragging = false;
+      sprite.dragData.dragX = null;
+      sprite.dragData.dragY = null;
+      sprite.dragData.dragZX = null;
+      sprite.dragData.dragZY = null;
+      sprite.dragData.mouseX = null;
+      sprite.dragData.mouseY = null;
+    });
+
+  }
+  sprite.internalID = internalID == undefined ? Maths.max(...project.sprites.map(e => Maths.numerate(e.internalID))) + 1 : internalID;
+  sprite.component = component || false;
+  sprite.parentComponent = parentComponent || null;
+  sprite.parent = spriteParent;
+  if (sprite.parent) project.sprites[project.sprites.map(e => e.internalID).indexOf(sprite.parent.internalID)].children.push(sprite.internalID);
+  sprite.cache = {};
+  sprite.dragData = {
+    dragging: false,
+    dragX: null,
+    dragY: null
+  };
+  sprite.id = parseFloat(id);
+  sprite.isDefault = !!isDefault;
+  sprite.isDemo = false;
+  if (camera) sprite.global = true;
+  sprite.scripts = [];
+  sprite.variables = [];
+  sprite.sounds = [];
+  sprite.isOriginal = true;
+  sprite.original = sprite;
+  sprite.clones = [];
+  sprite.children = [];
+  sprite.isFrozen = false;
+  sprite.direction = 90;
+  sprite.x = 0;
+  sprite.y = 0;
+  sprite.z = 0;
+  sprite.hidden = false
+  sprite.size = 100;
+  sprite.height = 100;
+  sprite.width = 100;
+  sprite.imageHeight = null;
+  sprite.imageWidth = null;
+  sprite.layer = globalFunctions.getMaxLayer() + 1;
+  sprite.opacity = 100;
+  sprite.hue = 0;
+  sprite.roundness = 0;
+  sprite['3d'] = {};
+  sprite['3d'].rotateX = 90;
+  sprite['3d'].rotateY = 90;
+  sprite['3d'].axisX = 90;
+  sprite['3d'].axisY = 90;
+  sprite['3d'].axisZ = 90;
+  sprite['3d'].isEnabled = false;
+  sprite.texture = {
+    costume: null,
+    x: 0,
+    y: 0,
+    fill: false,
+    repeat: false,
+    size: null
+  }
+  if (camera && defaults.size) defaults = false;
+  sprite.defaults = structuredClone(defaults || (camera ? {
+    x: 0,
+    y: 0,
+    z: 0,
+    rotateX: 90,
+    rotateY: 90,
+    rotateZ: 90,
+    FOV: 800,
+    '3d': false
+  } : {
+    costume: assignElement ? null : image,
+    direction: 90,
+    x: 0,
+    y: 0,
+    z: 0,
+    hidden: false,
+    size: 100,
+    height: 100,
+    width: 100,
+    imageHeight: null,
+    imageWidth: null,
+    layer: globalFunctions.getMaxLayer() + 1,
+    opacity: 100,
+    hue: 0,
+    roundness: 0,
+    '3d': {
+      rotateX: 90,
+      rotateY: 90,
+      axisX: 90,
+      axisY: 90,
+      axisZ: 90,
+      isEnabled: false
+    },
+    texture: {
+      costume: null,
+      x: 0,
+      y: 0,
+      fill: false,
+      repeat: false,
+      size: null
+    }
+  }));
+
+  if (camera) {
+    globalValues.camera = structuredClone(sprite.defaults);
+    updateCamera()
+  } else {
+    Object.keys(sprite.defaults).forEach(e => {
+      if (e === undefined) return;
+      sprite[e] = structuredClone(sprite.defaults[e]);
+      if (e == '3d') {
+        if (sprite['3d'].axisZ === undefined) {
+          Object.assign(sprite['3d'], {
+            axisX: 90,
+            axisY: 90,
+            axisZ: 90,
+          });
+        }
+      }
+    });
+    globalFunctions.updateDirection(sprite);
+    globalFunctions.updatePosition(sprite);
+  }
+  sprite.updating = false;
+  /*
+  sprite.updateCostume = function () {
+    if (this.global) return;
+    if (this.costume == null) return;
+    this.updating = true;
+    const temp = this.costume;
+    this.costume = '';
+    forceSpriteUpdate(this.id);
+    setTimeout(() => {
+      this.costume = globalFunctions.getAsset(temp);
+      forceSpriteUpdate(this.id);
+      this.updating = false;
+    });
+  }
+  */
+  if (sprite.ref) {
+    sprite.ref.addEventListener('load', function () {
+      if (!sprite.cache.bounds) sprite.cache.bounds = {};
+      sprite.cache.bounds.update = true;
+    });
+    sprite.ref.onload = function () {
+      if (!sprite.cache.bounds) sprite.cache.bounds = {};
+      sprite.cache.bounds.update = true;
+    }
+
+  }
+  sprite.cache.bounds = { update: true };
+  sprite.run = function (script, ...params) {
+    if (project.terminated) return;
+    const name = this.name;
+    try {
+      // this.spriteData = this;
+      // spriteData = this.spriteData;
+      // if(typeof script == 'string'){
+      return eval(`${(false && typeof spriteData == 'undefined') ? "let" : ""} const spriteData = getSprite(${this.id});(${functionEval.replace('// END', `return (${script})(...params)`)})();`);
+      // }else{
+      // let spriteData = this;
+      // let ret = script(...params);
+      // spriteData = undefined;
+      // return ret;
+      // }
+      // spriteData = undefined;
+    } catch (e) {
+      project.console.push({ text: e.toString(), sprite: name, err: e, type: 'error', script: (typeof script == 'string' ? ((params[0] && params[0].script) || 'unknown') : 'unknown') });
+    }
+
+  }
+  sprite.dimensions = function () {
+    return {
+      height: parseFloat(getComputedStyle(this.ref).height) * (this.height / 100) * (this.size / 100),
+      width: parseFloat(getComputedStyle(this.ref).width) * (this.width / 100) * (this.size / 100)
+    }
+  }
+  sprite.terminate = function (removeElement) {
+    if (this.global) return;
+    if (this.isDefault && !this.isOriginal) {
+      console.warn(`Default object termination was attempted. ${this.name}`);
+      return;
+    }
+    clearTimeout(this.renderProcess);
+    if (!this.isOriginal) this.original.clones.splice(this.original.clones.indexOf(this.id), 1);
+    if (this.parentComponent !== null) (this.parent ? this.parent : this).children.splice((this.parent ? this.parent : this).children.indexOf(this.internalID), 1);
+    if (this.component) {
+      this.children.forEach(e => {
+        project.sprites.find(i => i.internalID == e).terminate(removeElement);
+      });
+    }
+    project.sprites[project.sprites.map(e => e.id).indexOf(this.id)] = {};
+    if (removeElement && this.ref !== null) this.ref.remove();
+    if (typeof loopRuntime !== 'undefined') loopRuntime.terminated = true;
+  }
+  sprite.clone = function (setParentComponent) {
+    return this.run(`() =>{return clone(${setParentComponent})}`);
+  }
+  sprite.freeze = function () {
+    clearTimeout(this.renderProcess);
+    this.isFrozen = true;
+  }
+  initSprite(sprite.ref, sprite, skipInit);
+  return id;
+};
+
+function getEvent(id) {
+  if (typeof id == 'number') {
+    return project.events[id];
+  } else {
+    return project.events[project.events.map(e => { return e.event }).indexOf(id)];
+  }
+}
+
+function broadcastEvent(id, data) {
+  return globalFunctions.execEvent(id, data || {});
+}
+
+function getSprite(id) {
+  if (typeof id == 'number' || !isNaN(parseInt(id))) {
+    if (project.sprites[id] && project.sprites[id].id == id) return project.sprites[id];
+    return project.sprites[project.sprites.map(e => e.id).indexOf(parseInt(id))];
+  } else {
+    if (id in project.spriteMap) id = project.spriteMap[id];
+    if (project.cache && !project.cache.spriteMap) project.cache.spriteMap = {};
+    const spriteMapFind = project.cache && id in project.cache.spriteMap ? getSprite(project.cache.spriteMap[id]) : null;
+    if (spriteMapFind && spriteMapFind.name == id) {
+      return getSprite(project.cache.spriteMap[id]);
+    } else {
+      const temp = project.sprites.map(t => t.name).indexOf(id);
+      if (temp < 0) return;
+      project.cache.spriteMap[id] = project.sprites[temp].id;
+      return project.sprites[temp];
+    }
+
+
+  }
+}
+
+function forceSpriteUpdate(id) {
+  updateSprite(getSprite(id).ref, getSprite(id));
+}
+
+function trace(spriteData) {
+  return getSprite(spriteData.id);
+}
+
+function startRenderer(/*loopRuntime = {}*/ changeInterval) {
+  if (project.terminated) return;
+  globalValues.newFrame = performance.now() - globalValues.frameStamp;
+  globalValues.frameStamp = performance.now();
+  // loopRuntime.measure = loopRuntime.schedule || performance.now();
+  // loopRuntime.delay = 1000 / globalValues.FPS;
+  // loopRuntime.delay -= performance.now() - loopRuntime.measure;
+  // const fragment = document.createDocumentFragment();
+  globalFunctions.stage().querySelector('div#plane').style.contentVisibility = 'hidden';
+  if (globalValues.CPS < globalValues.FPS) globalValues.performanceBoost = performance.now();
+  if (project.queue) {
+    for (let s of project.queue.frame) {
+      if (abandonShip(s.sprite)) return;
+      if (s.sprite.invisible) continue;
+      s.script();
+      if (abandonShip(s.sprite)) return;
+    }
+  }
+  if (project.options.runtime.sync) {
+    for (let r of project.render) {
+      if (abandonShip(r)) return;
+      if (!r.isFrozen) {
+        updateSprite(r.ref, r, /*fragment*/);
+
+        if (false && r.ref && r.ref.parentNode && r.fragmentRef) {
+          const newFragment = r.fragmentRef.cloneNode(true);
+          r.ref.parentNode.replaceChild(newFragment, r.ref);
+          r.ref = newFragment;
+          r.fragmentRef = null;
+        }
+      }
+    }
+  }
+
+  updateCamera();
+
+  globalFunctions.stage().querySelector('div#plane').style.contentVisibility = 'visible';
+  const redraw = (sprite) => {
+    if (sprite.component) {
+      sprite.children.forEach(e => {
+        redraw(project.sprites.find(i => i.internalID == e));
+      });
+    } else {
+      const elem = sprite.ref;
+      const origHeight = elem.style.height;
+      elem.style.height = (origHeight == 'unset' ? sprite.cache.bounds.height * globalFunctions.getFixedValue('scale') : parseFloat(origHeight) + 1) + 'px';
+      setImmediate(() => {
+        elem.style.height = origHeight;
+      });
+    }
+  }
+  project.sprites.forEach(e => {
+    if (e.cache &&  e.cache.redraw) {
+      redraw(e);
+      e.cache.redraw = false;
+    }
+  });
+  // loopRuntime.schedule = performance.now() + loopRuntime.delay;
+  // if (project.options.runtime.fpsAuto) {
+  //   if (loopRuntime.date) globalValues.FPS = Maths.ceil(1000 / (new Date() - loopRuntime.date))
+  //   loopRuntime.date = new Date();
+  //   requestAnimationFrame(() => {
+  //     startRenderer(loopRuntime);
+  //   });
+  // } else {
+  //   setTimeout(startRenderer, loopRuntime.delay - (project.options.runtime.clock ? performance.now() - loopRuntime.measure : 0), loopRuntime);
+  // }
+  changeInterval(project.options.runtime.fpsAuto ? -1 : 1000 / globalValues.FPS);
+
+}
+globalFunctions.registerScript(startRenderer, 1000 / globalValues.FPS, false, true);
+
+
+function startCycles(/*loopRuntime = {delay: 0}*/ changeInterval) {
+  if (project.terminated) return;
+  // loopRuntime.measure = loopRuntime.schedule || performance.now();
+  // loopRuntime.delay = 1000 / globalValues.CPS;
+  // loopRuntime.delay -= performance.now() - loopRuntime.measure;
+
+  if (globalValues.CPS >= globalValues.FPS) globalValues.performanceBoost = performance.now();
+  if (project.queue) {
+    for (let s of project.queue.cycle) {
+      if (abandonShip(s.sprite)) return;
+      s.script();
+      if (abandonShip(s.sprite)) return;
+    }
+  }
+  // loopRuntime.schedule = performance.now() + loopRuntime.delay;
+
+  // const time = /*loopRuntime.delay - (project.options.runtime.clock ? performance.now() - loopRuntime.measure : 0)*/ 1000 / globalValues.CPS;
+  // time < 1 ? startCycles(loopRuntime) : setTimeout(startCycles, time, loopRuntime);
+  changeInterval(1000 / globalValues.CPS);
+
+}
+globalFunctions.registerScript(startCycles, 1000 / globalValues.CPS);
+
+
+if (parent.engineLoaded) setTimeout(parent.engineLoaded, 0);
+
+
+    // 3d-model
+    // window.addEventListener('load', function () {
+    // start
+
+        project.start(JSON.parse(unescape(`%7B%22options%22%3A%7B%22defaultLanguage%22%3A%22pillorscript%22%2C%22autosave%22%3Afalse%2C%22rasterise%22%3Afalse%2C%22autoSearch%22%3Atrue%2C%22stageSize%22%3A%7B%22width%22%3A1600%2C%22height%22%3A900%2C%22maintainAspectRatio%22%3Afalse%7D%2C%22runtime%22%3A%7B%22FPS%22%3A60%2C%22CPS%22%3A100%2C%22fpsDrop%22%3A30%2C%22animate%22%3Afalse%2C%22sync%22%3Atrue%2C%22forceSync%22%3Atrue%2C%22fpsAuto%22%3Atrue%2C%22redrawSVG%22%3Atrue%2C%22clock%22%3Atrue%2C%22supportAnimate%22%3Atrue%2C%22supportRepeatUpgrade%22%3Atrue%2C%22renderDistance%22%3A20000%2C%22renderFadeDistance%22%3A500%2C%22executionTime%22%3A5000%2C%22cacheAssets%22%3Afalse%2C%22motionBlur%22%3Afalse%7D%2C%22stageBackground%22%3A%22%2300fffb%22%2C%22stageBackgroundEntity%22%3Atrue%7D%2C%22assets%22%3A%5B%7B%22name%22%3A%22asset.svg%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/asset.svg%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22asset.svg%22%2C%22ext%22%3A%22SVG%22%2C%22extCase%22%3A%22svg%22%2C%22shortName%22%3A%22asset%22%2C%22type%22%3A%22image%22%2C%22id%22%3A0%2C%22parent%22%3Anull%7D%2C%7B%22name%22%3A%22Ground.jpg%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/Ground.jpg%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22Ground.jpg%22%2C%22ext%22%3A%22JPG%22%2C%22extCase%22%3A%22jpg%22%2C%22shortName%22%3A%22Ground%22%2C%22type%22%3A%22image%22%2C%22id%22%3A1%2C%22parent%22%3Anull%7D%2C%7B%22name%22%3A%22Kevin%20Koala.png%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/Kevin%20Koala.png%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22Kevin%20Koala.png%22%2C%22ext%22%3A%22PNG%22%2C%22extCase%22%3A%22png%22%2C%22shortName%22%3A%22Kevin%20Koala%22%2C%22type%22%3A%22image%22%2C%22id%22%3A2%2C%22parent%22%3Anull%7D%2C%7B%22name%22%3A%22sky.jpeg%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/sky.jpeg%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22sky.jpeg%22%2C%22ext%22%3A%22JPEG%22%2C%22extCase%22%3A%22jpeg%22%2C%22shortName%22%3A%22sky%22%2C%22type%22%3A%22image%22%2C%22id%22%3A3%2C%22parent%22%3Anull%7D%2C%7B%22name%22%3A%22Skybox.png%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/Skybox.png%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22Skybox.png%22%2C%22ext%22%3A%22PNG%22%2C%22extCase%22%3A%22png%22%2C%22shortName%22%3A%22Skybox%22%2C%22type%22%3A%22image%22%2C%22id%22%3A4%2C%22parent%22%3Anull%7D%5D%2C%22compiler%22%3A%7B%22variables%22%3A%5B%5D%7D%2C%22exportSettings%22%3A%7B%22exportType%22%3A%22html%22%2C%22assetStore%22%3A%22seperate%22%2C%22protectContext%22%3Afalse%2C%22requireInteraction%22%3Afalse%7D%2C%22sprites%22%3A%5B%7B%22name%22%3A%22Camera%22%2C%22scripts%22%3A%5B%7B%22name%22%3A%22Script0%22%2C%22event%22%3A%22start%22%2C%22code%22%3A%22%22%2C%22JScode%22%3A%22return%20%7B%5Cn%5Ctinit%3A%20async%20%28%29%20%3D%3E%20%7B%5Cn%5Cn%5Ct%7D%2C%5Cn%5CtcycleTick%3A%20async%20%28%29%20%3D%3E%20%7B%5Cn%5Ct%5Ctif%20%28globalValues.keysDown.includes%28%27s%27%29%29%20%7B%5Cn%5Ct%5Ct%5CtglobalValues.camera.z%20+%3D%20Maths.cos%28%28globalValues.camera.rotateX%20-%2090%29%20*%20%28Maths.PI%20/%20180%29%29%20*%2010%3B%5Cn%5Ct%5Ct%5CtglobalValues.camera.x%20-%3D%20Maths.sin%28%28globalValues.camera.rotateX%20-%2090%29%20*%20%28Maths.PI%20/%20180%29%29%20*%2010%3B%5Cn%5Ct%5Ct%7D%5Cn%5Ct%5Ctif%20%28globalValues.keysDown.includes%28%27w%27%29%29%20%7B%5Cn%5Ct%5Ct%5CtglobalValues.camera.z%20+%3D%20Maths.cos%28%28globalValues.camera.rotateX%20-%2090%29%20*%20%28Maths.PI%20/%20180%29%29%20*%20-10%3B%5Cn%5Ct%5Ct%5CtglobalValues.camera.x%20-%3D%20Maths.sin%28%28globalValues.camera.rotateX%20-%2090%29%20*%20%28Maths.PI%20/%20180%29%29%20*%20-10%3B%5Cn%5Ct%5Ct%7D%5Cn%20%20%20%20%20%20%20%20if%20%28globalValues.keysDown.includes%28%27d%27%29%29%20%7B%5Cn%5Ct%5Ct%5CtglobalValues.camera.z%20+%3D%20Maths.cos%28%28globalValues.camera.rotateX%20-%20180%29%20*%20%28Maths.PI%20/%20180%29%29%20*%2010%3B%5Cn%5Ct%5Ct%5CtglobalValues.camera.x%20-%3D%20Maths.sin%28%28globalValues.camera.rotateX%20-%20180%29%20*%20%28Maths.PI%20/%20180%29%29%20*%2010%3B%5Cn%5Ct%5Ct%7D%5Cn%5Ct%5Ctif%20%28globalValues.keysDown.includes%28%27a%27%29%29%20%7B%5Cn%5Ct%5Ct%5CtglobalValues.camera.z%20+%3D%20Maths.cos%28%28globalValues.camera.rotateX%29%20*%20%28Maths.PI%20/%20180%29%29%20*%2010%3B%5Cn%5Ct%5Ct%5CtglobalValues.camera.x%20-%3D%20Maths.sin%28%28globalValues.camera.rotateX%29%20*%20%28Maths.PI%20/%20180%29%29%20*%2010%3B%5Cn%5Ct%5Ct%7D%5Cn%5Ct%5Cn//%20%5Ct%5Ctif%20%28globalValues.keysDown.includes%28%27space%27%29%29%20globalValues.camera.y%20+%3D%2010%3B%5Cn//%20%5Ct%5Ctif%20%28globalValues.keysDown.includes%28%27shift%27%29%29%20globalValues.camera.y%20-%3D%2010%3B%5Cn%5Ct%5Ctif%20%28globalValues.keysDown.includes%28%27arrowup%27%29%29%20globalValues.camera.rotateY%20+%3D%201%3B%5Cn%5Ct%5Ctif%20%28globalValues.keysDown.includes%28%27arrowdown%27%29%29%20globalValues.camera.rotateY%20-%3D%201%3B%5Cn%5Ct%5Ctif%20%28globalValues.keysDown.includes%28%27arrowright%27%29%29%20globalValues.camera.rotateX%20+%3D%201%3B%5Cn%5Ct%5Ctif%20%28globalValues.keysDown.includes%28%27arrowleft%27%29%29%20globalValues.camera.rotateX%20-%3D%201%3B%5Cn%5Cn%5Cn%5Ct%7D%2C%5Cn%5CtframeTick%3A%20async%20%28%29%20%3D%3E%20%7B%5Cn%5Cn%5Ct%7D%5Cn%7D%3B%22%2C%22default%22%3A%22javascript%22%7D%5D%2C%22defaults%22%3A%7B%22x%22%3A0%2C%22y%22%3A-740%2C%22z%22%3A0%2C%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22rotateZ%22%3A90%2C%22FOV%22%3A800%2C%223d%22%3Atrue%2C%22force3D%22%3Atrue%2C%22jumpIn%22%3Atrue%7D%2C%22isDemo%22%3Afalse%2C%22global%22%3Atrue%2C%22component%22%3Afalse%2C%22parentComponent%22%3Anull%2C%22internalID%22%3A1%7D%2C%7B%22name%22%3A%22Component%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A0%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A0%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A30%2C%22imageHeight%22%3Anull%2C%22imageWidth%22%3Anull%2C%22layer%22%3A3%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A90%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3Anull%2C%22x%22%3A0%2C%22y%22%3A0%2C%22fill%22%3Afalse%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Atrue%2C%22parentComponent%22%3Anull%2C%22internalID%22%3A2%7D%2C%7B%22name%22%3A%22Object%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A-3150%2C%22y%22%3A0%2C%22z%22%3A0%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A4002%2C%22imageWidth%22%3A4002%2C%22layer%22%3A5%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A92.16685544064714%2C%223d%22%3A%7B%22rotateX%22%3A0%2C%22rotateY%22%3A-90%2C%22axisX%22%3A90%2C%22axisY%22%3A90%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22Ground.jpg%22%2C%22x%22%3A0%2C%22y%22%3A50%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A3%7D%2C%7B%22name%22%3A%22Object1%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A3167.6888064907257%2C%22y%22%3A0%2C%22z%22%3A0%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A4002%2C%22imageWidth%22%3A4002%2C%22layer%22%3A7%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A92.16685544064714%2C%223d%22%3A%7B%22rotateX%22%3A180%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A90%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22sky.jpeg%22%2C%22x%22%3A0%2C%22y%22%3A50%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A4%7D%2C%7B%22name%22%3A%22Object2%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A9%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A90%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-50%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A5%7D%2C%7B%22name%22%3A%22Object3%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A11%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A90%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-50%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A6%7D%2C%7B%22name%22%3A%22Object4%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A13%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A126%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-39.473684210526315%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A7%7D%2C%7B%22name%22%3A%22Object5%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A15%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A144%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-34.21052631578948%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A8%7D%2C%7B%22name%22%3A%22Object6%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A17%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A162%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-28.94736842105263%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A9%7D%2C%7B%22name%22%3A%22Object7%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A19%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A180%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-23.68421052631578%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A10%7D%2C%7B%22name%22%3A%22Object8%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A21%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A198%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-18.421052631578945%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A11%7D%2C%7B%22name%22%3A%22Object9%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A23%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A216%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-13.157894736842103%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A12%7D%2C%7B%22name%22%3A%22Object10%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A25%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A234%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-7.89473684210526%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A13%7D%2C%7B%22name%22%3A%22Object11%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A27%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A252%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-2.6315789473684177%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A14%7D%2C%7B%22name%22%3A%22Object12%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A29%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A270%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A2.631578947368425%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A15%7D%2C%7B%22name%22%3A%22Object13%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A31%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A288%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A7.894736842105267%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A16%7D%2C%7B%22name%22%3A%22Object14%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A33%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A306%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A13.15789473684211%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A17%7D%2C%7B%22name%22%3A%22Object15%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A35%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A324%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A18.42105263157896%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A18%7D%2C%7B%22name%22%3A%22Object16%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A37%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A342%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A23.684210526315795%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A19%7D%2C%7B%22name%22%3A%22Object17%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A39%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A360%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A28.94736842105263%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A20%7D%2C%7B%22name%22%3A%22Object18%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A41%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A378%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A34.21052631578948%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A21%7D%2C%7B%22name%22%3A%22Object19%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A43%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A396%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A39.47368421052633%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A22%7D%2C%7B%22name%22%3A%22Object20%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A45%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A414%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A44.736842105263165%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A23%7D%2C%7B%22name%22%3A%22Object21%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A47%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A432%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A50%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A24%7D%2C%7B%22name%22%3A%22Object22%22%2C%22costume%22%3A%22asset.svg%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22asset.svg%22%2C%22direction%22%3A90%2C%22x%22%3A30%2C%22y%22%3A-846%2C%22z%22%3A0%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3Anull%2C%22imageWidth%22%3Anull%2C%22layer%22%3A49%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A30%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A90%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Afalse%7D%2C%22texture%22%3A%7B%22costume%22%3Anull%2C%22x%22%3A0%2C%22y%22%3A0%2C%22fill%22%3Afalse%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3Anull%2C%22internalID%22%3A25%7D%2C%7B%22name%22%3A%22Object3%20%281%29%22%2C%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22scripts%22%3A%5B%5D%2C%22defaults%22%3A%7B%22costume%22%3A%22data%3Aimage/svg+xml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciLz4%3D%22%2C%22direction%22%3A90%2C%22x%22%3A0%2C%22y%22%3A0%2C%22z%22%3A2000%2C%22hidden%22%3Afalse%2C%22size%22%3A100%2C%22height%22%3A100%2C%22width%22%3A100%2C%22imageHeight%22%3A635.5377612981451%2C%22imageWidth%22%3A6337.377612981451%2C%22layer%22%3A11%2C%22opacity%22%3A100%2C%22hue%22%3A0%2C%22roundness%22%3A0%2C%223d%22%3A%7B%22rotateX%22%3A90%2C%22rotateY%22%3A90%2C%22axisX%22%3A90%2C%22axisY%22%3A108%2C%22axisZ%22%3A90%2C%22isEnabled%22%3Atrue%7D%2C%22texture%22%3A%7B%22costume%22%3A%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%2C%22x%22%3A0%2C%22y%22%3A-44.8%2C%22fill%22%3Atrue%2C%22repeat%22%3Afalse%2C%22size%22%3Anull%7D%7D%2C%22isDemo%22%3Afalse%2C%22component%22%3Afalse%2C%22parentComponent%22%3A2%2C%22internalID%22%3A26%7D%5D%2C%22assetMap%22%3A%7B%22videoblocks-6k-vr-360-camera-moving-above-desert-ready-for-use-in-vr360-virtual-reality_BnVsdvxIG_thumbnail-108004.png%22%3A%22Skybox.png%22%2C%22sand-texture-1461668467HwK.jpg%22%3A%22Ground.jpg%22%7D%2C%22spriteMap%22%3A%7B%7D%7D`)));
+      // start end
+    // });
+    
+    JSON.parse(unescape(`%5B%7B%22name%22%3A%22asset.svg%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/asset.svg%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22asset.svg%22%2C%22ext%22%3A%22SVG%22%2C%22extCase%22%3A%22svg%22%2C%22shortName%22%3A%22asset%22%2C%22type%22%3A%22image%22%2C%22id%22%3A0%2C%22parent%22%3Anull%7D%2C%7B%22name%22%3A%22Ground.jpg%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/Ground.jpg%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22Ground.jpg%22%2C%22ext%22%3A%22JPG%22%2C%22extCase%22%3A%22jpg%22%2C%22shortName%22%3A%22Ground%22%2C%22type%22%3A%22image%22%2C%22id%22%3A1%2C%22parent%22%3Anull%7D%2C%7B%22name%22%3A%22Kevin%20Koala.png%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/Kevin%20Koala.png%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22Kevin%20Koala.png%22%2C%22ext%22%3A%22PNG%22%2C%22extCase%22%3A%22png%22%2C%22shortName%22%3A%22Kevin%20Koala%22%2C%22type%22%3A%22image%22%2C%22id%22%3A2%2C%22parent%22%3Anull%7D%2C%7B%22name%22%3A%22sky.jpeg%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/sky.jpeg%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22sky.jpeg%22%2C%22ext%22%3A%22JPEG%22%2C%22extCase%22%3A%22jpeg%22%2C%22shortName%22%3A%22sky%22%2C%22type%22%3A%22image%22%2C%22id%22%3A3%2C%22parent%22%3Anull%7D%2C%7B%22name%22%3A%22Skybox.png%22%2C%22path%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D/Skybox.png%22%2C%22shortPath%22%3A%22D%3A/FileShare/Pillor/Windows/package.nw/Assets/Open%20Projects/Tm8gQ2hpbmEucHBmNDEwLjA1OTk0OTc2ODc2MTY4MDM0NA%3D%3D%22%2C%22relativePath%22%3A%22Skybox.png%22%2C%22ext%22%3A%22PNG%22%2C%22extCase%22%3A%22png%22%2C%22shortName%22%3A%22Skybox%22%2C%22type%22%3A%22image%22%2C%22id%22%3A4%2C%22parent%22%3Anull%7D%5D`)).forEach(e => {
+      if (!e.deleted) {
+        if (e.type == 'audio') {
+          const a = new Audio(globalFunctions.getAsset(e.relativePath));
+        } else if (e.type == 'image') {
+          const a = new Image();
+          a.src = globalFunctions.getAsset(e.realtivePath);
+        }
+      }
+    });
+    // engine stop
+  </script>
+  <script>if (typeof requestIdleCallback == 'undefined') requestIdleCallback = setTimeout; document.body.oncontextmenu = a => { a.preventDefault() }; (() => { const updateStageSize = a => { function b(a, b, c) { let d = b, e = c; return e / d > a ? e = d * a : d = e / a, { height: d, width: e } } globalValues.fixedHeight = a.height, globalValues.fixedWidth = a.width; if (a.maintainAspectRatio) { document.querySelector("pillor").style.aspectRatio = a.width + "/" + a.height; let c = b(a.width / a.height, window.innerHeight, window.innerWidth); document.querySelector("pillor").style.maxHeight = "unset", document.querySelector("pillor").style.maxWidth = "unset", document.querySelector("pillor").style.height = c.height + "px", document.querySelector("pillor").style.width = c.width + "px" } else document.querySelector("pillor").style.aspectRatio = "unset", document.querySelector("pillor").style.maxHeight = "unset", document.querySelector("pillor").style.maxWidth = "unset", document.querySelector("pillor").style.height = window.innerHeight + "px", document.querySelector("pillor").style.width = window.innerWidth + "px", globalFunctions.getFixedValue('any', true) }; updateStageSize(project.options.stageSize), project.updateStage = updateStageSize, window.addEventListener("resize", () => { updateStageSize(project.options.stageSize) }); setInterval(requestIdleCallback, 1000, () => { updateStageSize(project.options.stageSize) }) })()
+
+
+
+  </script>
+</body>
