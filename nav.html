@@ -15,10 +15,6 @@
         <div class="nav-button" onclick="parent.location.href = './coming.html'">Top Hits</div>
     </div>
     <script>
-        parent.onload = () =>{
-            parent.document.body.style.maxHeight = '100%';
-            document.body.style.maxHeight = '100%';
-        }
         const audio = new Audio('ambient.mp3')
         function play(){
             if(parent.location.pathname.includes('coming')) return;

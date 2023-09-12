@@ -10,11 +10,6 @@ body {
     width: 100%;
 }
 
-body {
-    max-height: 0%;
-    transition: max-height 2s ease-out;
-}
-
 a {
     filter: saturate(50);
 }

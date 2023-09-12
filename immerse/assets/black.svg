@@ -1,0 +1,38 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="357" height="267" viewBox="0,0,357,267" data-height="900" data-width="1600"><style>
+svg > g {
+transform-origin: center
+}
+@font-face {
+    font-family: 'Sans Serif';
+    src: url(../Fonts/SegoeUIVF.ttf);
+}
+
+@font-face {
+    font-family: 'Sans Serif Bold';
+    src: url(../Fonts/NotoSans-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Marker';
+    src: url(../Fonts/Knewave.ttf);
+}
+
+@font-face {
+    font-family: 'Handwriting';
+    src: url(../Fonts/handlee-regular.ttf);
+}
+
+@font-face {
+    font-family: 'Curly';
+    src: url(../Fonts/Griffy-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url(../Fonts/Grand9K-Pixel.ttf);
+}
+
+@font-face {
+    font-family: 'Scratch';
+    src: url(../Fonts/Scratch.ttf);
+}</style><g transform="translate(-637.09375,-340)"><g data-paper-data="{&quot;isPaintingLayer&quot;:true}" fill="#000000" fill-rule="nonzero" stroke="#000000" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" style="mix-blend-mode: normal"><path d="M638.09375,606v-265h355v265z"/></g></g></svg>
