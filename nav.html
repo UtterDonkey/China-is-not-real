@@ -17,7 +17,7 @@
     <script>
         const audio = new Audio('ambient.mp3')
         function play(){
-            if(location.pathname.includes('coming')) return;
+            if(parent.location.pathname.includes('coming')) return;
             audio.play();
             audio.onended = () =>{
                 play();
