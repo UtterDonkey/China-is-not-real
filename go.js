@@ -1,3 +1,31 @@
+getAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/ambient2.mp3').play();
+setInterval(() => {
+    setTimeout(() => {
+        getAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/hits/Rule Britannia.mp3').play();
+    }, 7000)
+
+    setTimeout(() => {
+        getAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/hits/Rule Britannia.mp3').pause();
+    }, 10000)
+}, 5000)
+setTimeout(() => {
+    getAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/mrbeast.mp3').play();
+    setTimeout(() => {
+        var spin = document.createElement("style"); spin.innerHTML = `@keyframes spin {from {rotate: 0deg}to {rotate: 360deg}}*{animation: spin 2s infinite;}`, document.head.appendChild(spin);
+    }, 13200)
+}, 7000)
+
+setInterval(() => {
+    getAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/error.mp3').currentTime = 0.3;
+    getAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/error.mp3').play();
+}, 700);
+
+setInterval(() => {
+    getAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/android.mp3').currentTime = 1;
+    getAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/android.mp3').play();
+}, 4000);
+
+
 for (let i = 0; i < 10; i++) {
     const img = document.createElement('img');
     img.src = 'https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/LordDarius.png'
@@ -13,7 +41,7 @@ for (let i = 0; i < 10; i++) {
     setInterval(() => {
         img.style.top = Math.random() * 100 + '%';
         img.style.left = Math.random() * 100 + '%';
-        img.style.filter = `hue-rotate(${Math.random()*360}deg)`;
+        img.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
     }, 1000);
 }
 setTimeout(() => {
@@ -82,9 +110,10 @@ setTimeout(() => {
     for (let i = 0; i < 5; i++) {
         addPerson('https://media0.giphy.com/media/nr9fJiqSuXCaQ/giphy.gif?cid=6c09b9520joq237qkzujms6aa4c5ous2s4oak796z32cikw8&ep=v1_stickers_related&rid=giphy.gif&ct=s');
     }
+    addPerson('https://media.giphy.com/media/rEaIcIBQ4QeGY/giphy.gif', '0.7');
 }, 5000)
 setInterval(() => {
-    document.body.style.translate = `${Math.random()*25}px ${Math.random()*25}px`
+    document.body.style.translate = `${Math.random() * 25}px ${Math.random() * 25}px`
 
 });
 
