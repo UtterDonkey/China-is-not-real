@@ -9,10 +9,9 @@ window.loadAudio = function (url) {
         loadedimgs++;
         if (loadedimgs === 14) {
             clearInterval(audioLoader);
-            alert('Please click anywhere on the page (not a link obviously)');
-            document.body.addEventListener('click', () => {
-                alert('Absolute Beast is ready. Please don\'t switch tabs. Buckle up and enjoy the next few minutes...')
-            }, { once: true })
+
+            alert('Absolute Beast is ready. Please don\'t switch tabs. Buckle up and enjoy the next few minutes...')
+
         }
     }, { once: true })
     audioInstances[url] = audio;
@@ -30,10 +29,9 @@ window.preload = function (link) {
         loadedimgs++;
         if (loadedimgs === 14) {
             clearInterval(audioLoader);
-            alert('Please click anywhere on the page (not a link obviously)');
-            document.body.addEventListener('click', () => {
-                alert('Absolute Beast is ready. Please don\'t switch tabs. Buckle up and enjoy the next few minutes...')
-            }, { once: true })
+
+            alert('Absolute Beast is ready. Please don\'t switch tabs. Buckle up and enjoy the next few minutes...')
+
 
         }
     }, { once: true });
@@ -65,5 +63,8 @@ window.loadAudios = function () {
     loadAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/hits/Rule Britannia.mp3');
 }
 
-window.audioLoader = setInterval(loadAudios, 5000);
-loadAudios();
+alert('Please click anywhere on the page (not a link obviously)');
+document.body.addEventListener('click', () => {
+    window.audioLoader = setInterval(loadAudios, 5000);
+    loadAudios();
+}, { once: true })
