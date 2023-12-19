@@ -9,7 +9,10 @@ window.loadAudio = function (url) {
         loadedimgs++;
         if (loadedimgs === 14) {
             clearInterval(audioLoader);
-            alert('Absolute Beast is ready. Please don\'t switch tabs. Buckle up and enjoy the next few minutes...')
+            alert('Please click anywhere on the page (not a link obviously)');
+            document.body.addEventListener('click', () => {
+                alert('Absolute Beast is ready. Please don\'t switch tabs. Buckle up and enjoy the next few minutes...')
+            }, { once: true })
         }
     }, { once: true })
     audioInstances[url] = audio;
@@ -27,7 +30,11 @@ window.preload = function (link) {
         loadedimgs++;
         if (loadedimgs === 14) {
             clearInterval(audioLoader);
-            alert('Absolute Beast is ready. Please don\'t switch tabs. Buckle up and enjoy the next few minutes...')
+            alert('Please click anywhere on the page (not a link obviously)');
+            document.body.addEventListener('click', () => {
+                alert('Absolute Beast is ready. Please don\'t switch tabs. Buckle up and enjoy the next few minutes...')
+            }, { once: true })
+
         }
     }, { once: true });
 
