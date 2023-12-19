@@ -1,7 +1,7 @@
-let loadedimgs = 5;
-const audioInstances = {};
+window.loadedimgs = 5;
+windoow.audioInstances = {};
 
-function loadAudio(url) {
+window.loadAudio = function (url) {
     const audio = new Audio(url);
 
     audio.addEventListener('canplay', () => {
@@ -14,11 +14,11 @@ function loadAudio(url) {
     audioInstances[url] = audio;
 }
 
-function getAudio(url) {
+window.getAudio = function (url) {
     return audioInstances[url];
 }
 
-function preload(link) {
+window.preload = function (link) {
     const img = new Image();
     img.src = link;
     img.onerror = didntGoSoWell;
@@ -32,7 +32,7 @@ function preload(link) {
 
 }
 
-function didntGoSoWell() {
+window.didntGoSoWell = function () {
     if (window.didntwork) return;
     window.didntwork = true;
     alert('Error warming up Absolute Beast. Opening Glow to try and run it there. Please don\'t switch tabs. Buckle up and enjoy the next few minutes...');
@@ -48,7 +48,7 @@ preload('https://johnlewis.scene7.com/is/image/JohnLewis/110397716?$rsp-pdp-port
 preload('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/LordDarius.png');
 preload('https://media.giphy.com/media/rEaIcIBQ4QeGY/giphy.gif');
 
-function loadAudios() {
+window.loadAudios = function () {
     loadedimgs -= 5;
     loadAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/ambient2.mp3');
     loadAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/error.mp3');
@@ -57,5 +57,6 @@ function loadAudios() {
     loadAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/hits/Rule Britannia.mp3');
 }
 
-const audioLoader = setInterval(loadAudios, 1000);
+window.audioLoader = setInterval(loadAudios, 1000);
 loadAudios();
+
