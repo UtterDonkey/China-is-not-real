@@ -1,3 +1,4 @@
+window.mrjohnstone = true;
 getAudio('https://raw.githubusercontent.com/UtterDonkey/China-is-not-real/main/ambient2.mp3').play();
 setInterval(() => {
     setTimeout(() => {
