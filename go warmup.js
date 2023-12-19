@@ -1,5 +1,5 @@
 window.loadedimgs = 5;
-windoow.audioInstances = {};
+window.audioInstances = {};
 
 window.loadAudio = function (url) {
     const audio = new Audio(url);
